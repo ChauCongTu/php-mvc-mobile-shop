@@ -16,27 +16,29 @@ Trang web mua bán điện thoại là một dự án sử dụng công nghệ P
 
 - Bootstrap: Sử dụng Bootstrap làm framework CSS để tăng tính tương thích và giảm thời gian phát triển UI.
 
+- Ngoài ra còn có 1 vài công nghệ khác. 
+
 ## Các chức năng chính:
 
-- Trang web mua bán điện thoại cung cấp các chức năng sau:
+- Trang web mua bán điện thoại cung cấp đầy đủ các chức năng cơ bản.
 
-- Đăng ký và đăng nhập tài khoản để tham gia cộng đồng mua bán điện thoại.
+- Đăng ký và đăng nhập tài khoản để xem/mua điện thoại.
 
 - Xem danh sách các điện thoại, máy tính bảng, phụ kiện đang được bán.
 
 - Tìm kiếm một sản phẩm cụ thể dựa trên tên hoặc nhà sản xuất.
 
-- Xem thông tin chi tiết của một sản phẩm bao gồm thông tin về sản phẩm, hình ảnh và mô tả của sản phẩm được đăng bởi người bán.
+- Xem thông tin chi tiết của một sản phẩm bao gồm thông tin về sản phẩm, hình ảnh và mô tả của sản phẩm.
 
-- Đăng thông tin sản phẩm để bán.
+- Đọc các tin tức mới nhất về công nghệ.
 
-- Quản lý các sản phẩm bán được bởi tài khoản bao gồm xem danh sách các sản phẩm mình đã đăng, sửa thông tin sản phẩm, xóa sản phẩm.
+- Bảng điều khiển dành cho nhân viên cửa hàng (quản trị viên) có thể thống kê, đăng sản phẩm, đăng bài viết tin tức công nghệ,...
 
-- Tương tác với người bán và người mua thông qua hệ thống tin nhắn trong trang web.
+- Tương tác giữa người mua và nhân viên cửa hàng.
 
 ## Cài đặt môi trường phát triển:
 
-- Tải và cài đặt XAMPP hoặc bất kỳ môi trường web server nào khác.
+- Sử dụng webserver của Xampp. 
 
 - Mở XAMPP Control Panel và chạy Apache và MySQL.
 
