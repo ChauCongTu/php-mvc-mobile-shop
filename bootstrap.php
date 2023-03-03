@@ -38,8 +38,6 @@ if(!empty($config['database'])){
         require_once 'core/Database.php';
         require_once 'core/DB.php';
         $db = new Database();
-        echo '<pre>';
-        echo '</pre>';
     }
 }
 require_once 'core/Model.php';
