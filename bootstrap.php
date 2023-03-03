@@ -44,4 +44,5 @@ require_once 'core/Model.php';
 require_once 'core/Controller.php'; //Load controller
 require_once 'core/Request.php'; //Load Request
 require_once 'core/Response.php'; //Load Response
+require_once 'core/Function.php'; //Load Function
 ?>

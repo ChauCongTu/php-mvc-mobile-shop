@@ -123,38 +123,46 @@
     </div>
 </div>
 <!-- Các sản phẩm giảm giá nhiều nhất -->
+<?php 
+if(count($flashSaleProduct) == 0){
+
+}
+else{
+?>
 <div class="container">
     <div class="list-product">
         <div class="flash-sale-header"><img src="/img/—Pngtree—flash sale yellow red 3d_5535040.png" class="img-flash-sale none-on-mobile" width="108px"> SĂN SALE LIỀN TAY - RINH NGAY QUÀ HOT</div>
     </div>
     <div class="list-product-body bg-danger">
         <div class="slick-without-dots">
-
             <?php
             foreach($flashSaleProduct as $value){
-                
+                $discount = round((($value['origin_price'] - $value['discount_price'])/$value['origin_price']) * 100);
+                echo'<div class="slick-item">
+                        <div class="slick-product-slider">
+                            <div class="slick-sale-info"><span> Giảm '.$discount.'%</span></div>
+                            <div class="slick-img-product-sale">
+                                <img src="'.$value['img'].'">
+                            </div>
+                            <div class="slick-name-product">'.$value['name'].'</div>
+                            <div class="slick-price">
+                                <div class="slick-sale-price">'.currency_format($value['discount_price']).'</div>
+                                <div class="slick-origin-price"> <del>'.currency_format($value['origin_price']).'</del></div>
+                            </div>
+                            <div class="slick-sale-bonus">Tặng Ốp lưng xilicon dẻo</div>
+                            <a href="/'.$value['slug_product'].'-'.$value['product_id'].'" class="none-underline">
+                                <div class="slick-order-button"> Xem chi tiết</div>
+                            </a>
+                        </div>
+                    </div>';
             }
             ?>
-            <!-- <div class="slick-item">
-                <div class="slick-product-slider">
-                    <div class="slick-sale-info"><span> Giảm 3.000.000đ</span></div>
-                    <div class="slick-img-product-sale">
-                        <img src="/img/samsung-galaxy-a53-5g-128gb-didongviet.png">
-                    </div>
-                    <div class="slick-name-product">Samsung Galaxy a52 5G 128GB 1</div>
-                    <div class="slick-price">
-                        <div class="slick-sale-price">12.999.000đ</div>
-                        <div class="slick-origin-price"> <del> 15.999.000đ</del></div>
-                    </div>
-                    <div class="slick-sale-bonus">Tặng Ốp lưng xilicon dẻo</div>
-                    <a href="/?masp" class="none-underline">
-                        <div class="slick-order-button"> Xem chi tiết</div>
-                    </a>
-                </div>
-            </div> -->
         </div>
     </div>
 </div>
+<?php
+}
+?>
 <!-- Các thương hiệu nổi tiếng -->
 <div class="container">
     <div class="list-product">
