@@ -689,6 +689,379 @@ ul {
     color: #fff;
 }
 
+.sanpham {
+    width: 100%;
+}
+
+.sanpham-header {
+    padding: 10px 0;
+    font-size: 20px;
+    border-bottom: 1px solid #6c757d;
+    font-weight: bold;
+}
+
+.sanpham-slick-item img {
+    width: 100%;
+}
+
+.sanpham-menu {
+    margin: 5px auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 0;
+}
+
+.sanpham-menu a {
+    padding: 5px 12px;
+    border: 1px solid #95a5a6;
+    border-radius: 1.5rem;
+    color: #000;
+    text-decoration: none;
+}
+
+.sanpham-menu a:hover {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.sanpham-price {
+    padding: 10px 0;
+}
+
+.sanpham-sale-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #dc3545;
+}
+
+.sanpham-origin-price {
+    font-size: 14px;
+}
+
+.sanpham-price {
+    display: flex;
+}
+
+.sanpham-info-decrease span {
+    font-size: 11px;
+    margin: 0 0 0 15px;
+    background-color: #dc3545;
+    color: #fff;
+    padding: 2px 7px;
+}
+
+.sanpham-uudai {
+    padding: 10px 0;
+}
+
+.sanpham-uudai-header {
+    background-color: #dc3545;
+    color: #fff;
+    padding: 10px;
+    border: 1px solid #6c757d;
+    font-weight: bold;
+}
+
+.sanpham-uudai-header img {
+    width: 30px;
+    margin-top: 0;
+}
+
+.sanpham-uudai-header span {
+    margin-top: 10px;
+}
+
+.sanpham-uudai-body {
+    border: 1px solid #6c757d;
+    line-height: 1.5;
+    padding: 5px 10px 0 10px;
+}
+
+.btn-order {
+    padding: 10px 0;
+    text-align: center;
+}
+
+.btn-order-now {
+    background-color: #dc3545;
+    padding: 10px 0;
+}
+
+.btn-order-btn {
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-order-btn:hover {
+    color: #fff;
+}
+
+.btn-order {
+    width: 100%;
+    background-color: #fff;
+}
+
+.btn-order-pre {
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.btn--order {
+    background-color: #007bff;
+    padding: 10px 0;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.btn-order-btn-2 {
+    color: #fff;
+    width: 50%;
+    text-decoration: none;
+}
+
+.btn-order-btn-2:first-child {
+    margin-right: 5px;
+}
+
+.btn-order-btn-2:last-child {
+    margin-left: 5px;
+}
+
+.btn-order-btn-2:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 879px) {
+    .btn-order {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        z-index: 1000;
+    }
+}
+
+.slick-arrow-sanpham {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #fff;
+    color: #000;
+    border: none;
+    font-size: 20px;
+    z-index: 5;
+    transition: all 0.2s linear;
+}
+
+.slick-arrow-sanpham:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+@media only screen and (min-width: 880px) {
+    .sanpham-menu-header {
+        display: flex;
+    }
+
+    .sanpham-slick-img {
+        width: 50%;
+    }
+
+    .sanpham-right-header {
+        margin-top: 10px;
+    }
+
+    .sanpham-header {
+        font-size: 30px;
+        padding: 30px 0;
+    }
+
+    .sanpham-body {
+        width: 100%;
+        display: flex;
+    }
+
+    .sanpham-body-config {
+        margin-right: 5px;
+        width: 50%;
+    }
+
+    .sanpham-body-info {
+        margin-left: 10px;
+        width: 50%;
+    }
+}
+
+.sanpham-body {
+    width: 100%;
+    padding: 10px 0;
+}
+
+.sanpham-info-header {
+    width: 100%;
+    padding: 15px 0 10px 0;
+    font-size: 20px;
+    border-bottom: 1px solid #6c757d;
+}
+
+.sanpham-info-body {
+    padding: 10px 0;
+    width: 100%;
+    position: relative;
+}
+
+.sanpham-see-more {
+    width: 100%;
+    margin-top: -10px;
+}
+
+
+#sanpham-see-more-btn {
+    width: 100%;
+    border: 1px solid #007bff;
+    padding: 10px;
+    color: #007bff;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+#sanpham-see-more-btn:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.gachngang {
+    width: 100%;
+    height: 10px;
+    background-color: #dfe6e9;
+    position: absolute;
+    left: 0;
+}
+
+.sanpham-img img {
+    width: 100%;
+}
+
+.sanpham-thuonghieu-body {
+    width: 100%;
+    padding: 10px;
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sanpham-thuonghieu {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #dfe6e9;
+}
+
+.sanpham-thuonghieu-img {
+    width: 100%;
+}
+
+.sanpham-thuonghieu-img img {
+    width: 100%;
+}
+
+.sanpham-thuonghieu-name {
+    padding: 10px;
+    font-size: 20px;
+}
+
+.sanpham-price {
+    padding: 0 10px;
+}
+
+.sanpham-see-all {
+    position: absolute;
+    right: 10px;
+    border: 1px solid #95a5a6;
+    border-radius: 1.5rem;
+    font-size: 18px;
+    padding: 5px 10px;
+}
+
+#sanpham-nenmo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #95a5a6;
+    opacity: .7;
+    z-index: 10000;
+    display: none;
+}
+
+.sanpham-detail-header {
+    font-size: 25px;
+}
+
+#sanpham-detail-info {
+    position: fixed;
+    top: 10%;
+    left: 500%;
+    transform: translateX(-50%);
+    width: 90%;
+    z-index: 10001;
+    background-color: #fff;
+    padding: 10px;
+}
+
+#sanpham-detail-detail {
+    position: fixed;
+    top: 10%;
+    left: 500%;
+    transform: translateX(-50%);
+    width: 90%;
+    z-index: 10001;
+    background-color: #fff;
+    padding: 10px;
+}
+
+#sanpham-detail-config {
+    position: fixed;
+    top: 10%;
+    left: 500%;
+    transform: translateX(-50%);
+    width: 90%;
+    z-index: 10001;
+    background-color: #fff;
+    padding: 10px;
+}
+
+@media only screen and (min-width: 880px) {
+    #sanpham-detail-info {
+        width: 50%;
+    }
+    
+    #sanpham-detail-detail {
+        width: 50%;
+    }
+    
+    #sanpham-detail-config {
+        width: 50%;
+    }
+    
+}
+
+.scroll-pane {
+    height: 70vh;
+    overflow-y: scroll;
+    overflow-X: none;
+    border: 1px solid gray;
+    padding: 10px;
+}
+
+.sanpham-detail-close {
+    float: right;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
 .foot-support {
     position: relative;
     display: flex;

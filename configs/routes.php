@@ -6,7 +6,7 @@ $routes['default_actions'] = 'index';
  * Đường dẫn ảo => đường dẫn thật
  * 
  */
-$routes['danh-muc-san-pham'] = 'product/index';
+$routes['trang-chu'] = 'home/index';
 $routes['(.+)-category'] = 'product/categories/$1';
-$routes['(.+)/.+.(\d+).html'] = 'product/detail/$1/$2';
+$routes['(.+)_(\d+)'] = 'product/item/$1/$2';
 ?>

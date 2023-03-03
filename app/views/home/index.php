@@ -149,8 +149,7 @@ else{
                                 <div class="slick-sale-price">'.currency_format($value['discount_price']).'</div>
                                 <div class="slick-origin-price"> <del>'.currency_format($value['origin_price']).'</del></div>
                             </div>
-                            <div class="slick-sale-bonus">Tặng Ốp lưng xilicon dẻo</div>
-                            <a href="/'.$value['slug_product'].'-'.$value['product_id'].'" class="none-underline">
+                            <a href="/'.$value['slug_product'].'_'.$value['product_id'].'" class="none-underline">
                                 <div class="slick-order-button"> Xem chi tiết</div>
                             </a>
                         </div>
@@ -205,6 +204,46 @@ else{
     </div>
     <div class="list-product-body">
         <div class="slick-without-dots">
+            <?php
+            $now = date('Y-m-d H:i:s');
+            foreach($iphoneOutstanding as $value){
+                if($now <= $value['end_discount']){
+                    $discount = round((($value['origin_price'] - $value['discount_price'])/$value['origin_price']) * 100);
+                    echo'<div class="slick-item">
+                            <div class="slick-product-slider">
+                                <div class="slick-sale-info"><span> Giảm '.$discount.'%</span></div>
+                                <div class="slick-img-product-sale">
+                                    <img src="'.$value['img'].'">
+                                </div>
+                                <div class="slick-name-product">'.$value['name'].'</div>
+                                <div class="slick-price">
+                                    <div class="slick-sale-price">'.currency_format($value['discount_price']).'</div>
+                                    <div class="slick-origin-price"> <del>'.currency_format($value['origin_price']).'</del></div>
+                                </div>
+                                <a href="/'.$value['slug_product'].'_'.$value['product_id'].'" class="none-underline">
+                                    <div class="slick-order-button"> Xem chi tiết</div>
+                                </a>
+                            </div>
+                        </div>';
+                }
+                else{
+                    echo'<div class="slick-item">
+                            <div class="slick-product-slider">
+                                <div class="slick-img-product-sale">
+                                    <img src="'.$value['img'].'">
+                                </div>
+                                <div class="slick-name-product">'.$value['name'].'</div>
+                                <div class="slick-price">
+                                    <div class="slick-sale-price">'.currency_format($value['origin_price']).'</div>
+                                </div>
+                                <a href="/'.$value['slug_product'].'_'.$value['product_id'].'" class="none-underline">
+                                    <div class="slick-order-button"> Xem chi tiết</div>
+                                </a>
+                            </div>
+                        </div>';
+                }
+            }
+            ?>
         </div>
     </div>
 </div>
@@ -229,7 +268,45 @@ else{
     </div>
     <div class="list-product-body">
         <div class="slick-without-dots">
-
+            <?php
+            foreach($accessory as $value){
+                if($now <= $value['end_discount']){
+                    $discount = round((($value['origin_price'] - $value['discount_price'])/$value['origin_price']) * 100);
+                    echo'<div class="slick-item">
+                            <div class="slick-product-slider">
+                                <div class="slick-sale-info"><span> Giảm '.$discount.'%</span></div>
+                                <div class="slick-img-product-sale">
+                                    <img src="'.$value['img'].'">
+                                </div>
+                                <div class="slick-name-product">'.$value['name'].'</div>
+                                <div class="slick-price">
+                                    <div class="slick-sale-price">'.currency_format($value['discount_price']).'</div>
+                                    <div class="slick-origin-price"> <del>'.currency_format($value['origin_price']).'</del></div>
+                                </div>
+                                <a href="/'.$value['slug_product'].'_'.$value['product_id'].'" class="none-underline">
+                                    <div class="slick-order-button"> Xem chi tiết</div>
+                                </a>
+                            </div>
+                        </div>';
+                }
+                else{
+                    echo'<div class="slick-item">
+                            <div class="slick-product-slider">
+                                <div class="slick-img-product-sale">
+                                    <img src="'.$value['img'].'">
+                                </div>
+                                <div class="slick-name-product">'.$value['name'].'</div>
+                                <div class="slick-price">
+                                    <div class="slick-sale-price">'.currency_format($value['origin_price']).'</div>
+                                </div>
+                                <a href="/'.$value['slug_product'].'_'.$value['product_id'].'" class="none-underline">
+                                    <div class="slick-order-button"> Xem chi tiết</div>
+                                </a>
+                            </div>
+                        </div>';
+                }
+            }
+            ?>
         </div>
     </div>
 </div>
@@ -240,11 +317,49 @@ else{
     </div>
     <div class="list-product-body">
         <div class="slick-without-dots">
-
+        <?php
+            foreach($tablet as $value){
+                if($now <= $value['end_discount']){
+                    $discount = round((($value['origin_price'] - $value['discount_price'])/$value['origin_price']) * 100);
+                    echo'<div class="slick-item">
+                            <div class="slick-product-slider">
+                                <div class="slick-sale-info"><span> Giảm '.$discount.'%</span></div>
+                                <div class="slick-img-product-sale">
+                                    <img src="'.$value['img'].'">
+                                </div>
+                                <div class="slick-name-product">'.$value['name'].'</div>
+                                <div class="slick-price">
+                                    <div class="slick-sale-price">'.currency_format($value['discount_price']).'</div>
+                                    <div class="slick-origin-price"> <del>'.currency_format($value['origin_price']).'</del></div>
+                                </div>
+                                <a href="/'.$value['slug_product'].'_'.$value['product_id'].'" class="none-underline">
+                                    <div class="slick-order-button"> Xem chi tiết</div>
+                                </a>
+                            </div>
+                        </div>';
+                }
+                else{
+                    echo'<div class="slick-item">
+                            <div class="slick-product-slider">
+                                <div class="slick-img-product-sale">
+                                    <img src="'.$value['img'].'">
+                                </div>
+                                <div class="slick-name-product">'.$value['name'].'</div>
+                                <div class="slick-price">
+                                    <div class="slick-sale-price">'.currency_format($value['origin_price']).'</div>
+                                </div>
+                                <a href="/'.$value['slug_product'].'_'.$value['product_id'].'" class="none-underline">
+                                    <div class="slick-order-button"> Xem chi tiết</div>
+                                </a>
+                            </div>
+                        </div>';
+                }
+            }
+            ?>
         </div>
     </div>
 </div>
-<!-- Sản phẩm phụ kiện xịn -->
+<!--  -->
 <div class="container none-on-mobile">
     <div class="list-product">
         <div class="list-product-header">Bản tin công nghệ</div>

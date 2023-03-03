@@ -23,7 +23,7 @@ function closeads() {
     document.getElementById("quangcao").style.top = "2000%",
         document.getElementById("nen-mo").style.display = "none"
 };
-$(document).ready(function() {
+$(document).ready(function () {
     $('.slick-banner-long').slick({
         slidesToShow: 1,
         autoplay: true,
@@ -41,28 +41,28 @@ $(document).ready(function() {
         prevArrow: "<button type='button' class='slick-prev slick-arrow'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
         nextArrow: "<button type='button' class='slick-next slick-arrow'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
         responsive: [{
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                infinite: true,
+                dots: true
             }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }
         ]
     });
     $('.slick-thuong-hieu').slick({
@@ -73,28 +73,28 @@ $(document).ready(function() {
         prevArrow: "<button type='button' class='slick-prev slick-arrow'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
         nextArrow: "<button type='button' class='slick-next slick-arrow'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
         responsive: [{
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                infinite: true,
+                dots: true
             }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }
         ]
     });
 });
@@ -111,24 +111,56 @@ $('.slick-body').slick({
     responsive: [{
         breakpoint: 1024,
         settings: {
-          slidesToShow: 4,
-          slidesToScroll: 3,
-          infinite: true,
+            slidesToShow: 4,
+            slidesToScroll: 3,
+            infinite: true,
         }
-      },
-      {
+    },
+    {
         breakpoint: 600,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 2
+            slidesToShow: 3,
+            slidesToScroll: 2
         }
-      },
-      {
+    },
+    {
         breakpoint: 480,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1
+            slidesToShow: 2,
+            slidesToScroll: 1
         }
-      }
+    }
     ]
-  });
+});
+$('.sanpham-slick-img').slick({
+    infinite: true,
+    speed: 300,
+    arrows: true,
+    slidesToShow: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    prevArrow: "<button type='button' class='slick-prev slick-arrow-sanpham'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
+    nextArrow: "<button type='button' class='slick-next slick-arrow-sanpham'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
+
+});
+
+function seeDetail() {
+    document.getElementById('sanpham-nenmo').style.display = 'block',
+        document.getElementById('sanpham-detail-detail').style.left = '50%'
+}
+
+function seeInfo() {
+    document.getElementById('sanpham-nenmo').style.display = 'block',
+        document.getElementById('sanpham-detail-info').style.left = '50%'
+}
+function seeConfig() {
+    document.getElementById('sanpham-nenmo').style.display = 'block',
+        document.getElementById('sanpham-detail-config').style.left = '50%'
+}
+
+function closeDI() {
+    document.getElementById('sanpham-nenmo').style.display = 'none',
+        document.getElementById('sanpham-detail-info').style.left = '500%',
+        document.getElementById('sanpham-detail-detail').style.left = '500%'
+        document.getElementById('sanpham-detail-config').style.left = '500%'
+}

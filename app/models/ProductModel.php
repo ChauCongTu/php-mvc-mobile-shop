@@ -36,19 +36,27 @@ class ProductModel extends Model{
         return $data;
     }
     public function getProductById($idProduct){
-        $data = $this->db->table($this->_tableMain)->select("*")->where('product_id', '=', $idProduct)->get();
+        $data = $this->db->query("SELECT * FROM product p JOIN product_discount d ON p.product_id = d.product_id JOIN product_img i ON d.product_id = i.product_id WHERE p.product_id = $idProduct AND product_img_id = (SELECT product_img_id FROM product_img LIMIT 1)")->fetch(PDO::FETCH_ASSOC);
         return $data;
     }
     public function searchProductByName($keyword){
-        $data = $this->db->table($this->_tableMain)->select("*")->whereLike('name', $keyword)->get();
+        $data = $this->db->query("SELECT * FROM product p JOIN product_discount d ON p.product_id = d.product_id JOIN product_img i ON d.product_id = i.product_id WHERE p.name LIKE '$keyword' AND product_img_id = (SELECT product_img_id FROM product_img LIMIT 1)")->fetchAll(PDO::FETCH_ASSOC);
         return $data;
     }
     public function getProductByType($type_code, $number = ''){
         if ($number == null){
-            $data = $this->db->table($this->_tableMain)->select("*")->where('type', '=', $type_code)->get();
+            $data = $this->db->query("SELECT * FROM product p JOIN product_discount d ON p.product_id = d.product_id JOIN product_img i ON d.product_id = i.product_id WHERE p.type = $type_code AND product_img_id = (SELECT product_img_id FROM product_img LIMIT 1)")->fetchAll(PDO::FETCH_ASSOC);
             return $data;
         }
-        $data = $this->db->table($this->_tableMain)->select("*")->where('type', '=', $type_code)->limit($number)->get();
+        $data = $this->db->query("SELECT * FROM product p JOIN product_discount d ON p.product_id = d.product_id JOIN product_img i ON d.product_id = i.product_id WHERE p.type = $type_code AND product_img_id = (SELECT product_img_id FROM product_img LIMIT 1) LIMIT $number")->fetchAll(PDO::FETCH_ASSOC);
+        return $data;
+    }
+    public function getProductByBrand($brand_id, $number = ''){
+        if ($number == null){
+            $data = $this->db->query("SELECT * FROM product p JOIN product_discount d ON p.product_id = d.product_id JOIN product_img i ON d.product_id = i.product_id WHERE p.brand_id = $brand_id AND product_img_id = (SELECT product_img_id FROM product_img LIMIT 1)")->fetchAll(PDO::FETCH_ASSOC);
+            return $data;
+        }
+        $data = $this->db->query("SELECT * FROM product p JOIN product_discount d ON p.product_id = d.product_id JOIN product_img i ON d.product_id = i.product_id WHERE p.brand_id = $brand_id AND product_img_id = (SELECT product_img_id FROM product_img LIMIT 1) LIMIT $number")->fetchAll(PDO::FETCH_ASSOC);
         return $data;
     }
     public function addProduct($data){
