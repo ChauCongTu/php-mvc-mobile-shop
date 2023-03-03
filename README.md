@@ -38,13 +38,9 @@ Trang web mua bán điện thoại là một dự án sử dụng công nghệ P
 
 ## Cài đặt môi trường phát triển:
 
-- Sử dụng webserver của Xampp. 
+- Sử dụng webserver của Xampp. [Xem hướng dẫn tại đây](https://phpandmysql.com/extras/installing-xampp/#how-to-install-xampp)
 
-- Mở XAMPP Control Panel và chạy Apache và MySQL.
-
-- Import database từ thư mục `database` vào MySQL. Ta có thể sử dụng phpMyAdmin để import.
-
-- Chạy trang web bằng cách mở trình duyệt và truy cập địa chỉ `http://localhost/<thưmục>`.
+- Code bằng trình biên dịch Visual Studio Code. [Xem hướng dẫn tại đây](https://www.geeksforgeeks.org/how-to-install-visual-studio-code-on-windows/)
 
 ### Kết luận: 
   Trang web mua bán điện thoại MobileStore là một project code bởi ChauQueNhon, sử dụng các công nghệ: PHP MVC, MySQL, HTML, CSS, JS và Bootstrap ... nhằm đáp ứng nhu cầu mua bán điện thoại của người dùng. Với các chức năng chính và các công nghệ sử dụng, trang web có thể đáp ứng tốt các nhu cầu của người dùng cũng như cung cấp trải nghiệm mua sắm trực tuyến dễ dàng, hiệu quả.
