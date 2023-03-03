@@ -1,0 +1,6 @@
+-- Mô hình hoạt động
+-- 1. Tài khoản (user(user_id, username, password, rights))
+-- 2. Thư mục (folder(d_id, d_name, create_time))
+-- 3. Tệp (file(f_id, f_name, upload_time))
+-- File lưu trữ dưới dạng 
+-- home_url/user_id/dir_name/file_name
