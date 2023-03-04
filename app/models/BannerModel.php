@@ -31,5 +31,10 @@ class BannerModel extends Model{
         $data = $this->db->table($this->_table)->select("*")->where('from_date', '<', $now)->where('to_date', '>', $now)->where('type', '=', 2)->limit(2)->get();
         return $data;
     }
+    public function getBrandBanner(){
+        $now = date('Y-m-d H:i:s');
+        $data = $this->db->table($this->_table)->select("*")->where('from_date', '<', $now)->where('to_date', '>', $now)->where('type', '=', 5)->limit(8)->get();
+        return $data;
+    }
 }
 ?>

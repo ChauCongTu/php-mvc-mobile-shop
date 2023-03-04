@@ -165,35 +165,19 @@ else{
 <!-- Các thương hiệu nổi tiếng -->
 <div class="container">
     <div class="list-product">
-        <div class="list-product-header">Thương hiệu nổi tiếng</div>
+        <div class="list-product-header">Chuyên trang thương hiệu</div>
     </div>
     <div class="list-product-body">
         <div class="slick-thuong-hieu">
-            <div class="slick-item">
-                <a href="">
-                    <img src="/img/th-apple.png">
-                </a>
-            </div>
-            <div class="slick-item">
-                <a href="">
-                    <img src="/img/th-sony.png">
-                </a>
-            </div>
-            <div class="slick-item">
-                <a href="">
-                    <img src="/img/th-oppo.png">
-                </a>
-            </div>
-            <div class="slick-item">
-                <a href="">
-                    <img src="/img/thuong-hieu-samsung.png">
-                </a>
-            </div>
-            <div class="slick-item">
-                <a href="">
-                    <img src="/img/thuong-hieu-xiaomi.png">
-                </a>
-            </div>
+            <?php
+            foreach($brandBanner as $value){
+                echo'<div class="slick-item">
+                        <a href="'.$value['link_product'].'">
+                            <img src="'.$value['img'].'">
+                        </a>
+                    </div>';
+            }
+            ?>
         </div>
     </div>
 </div>
@@ -368,68 +352,11 @@ else{
                 <div class="col-sm-3">
                     <div class="news">
                         <a href="" class="color-black">
-                            <div class="news-img"><img src="/img/gg-bard.png" class="border-radius-img-header"></div>
+                            <div class="news-img"><img src="https://helios-i.mashable.com/imagery/articles/05yqcD22m6xY0FtIZjhhz0K/hero-image.fill.size_1248x702.v1675870042.jpg" class="border-radius-img-header"></div>
                             <div class="news-name">Google ra mắt "AI Bard" để cạnh tranh với ChatGPT AI</div>
                         </a>
                     </div>
                 </div>
-                <div class="col-sm-3">
-                    <div class="news">
-                        <a href="" class="color-black">
-                            <div class="news-img"><img src="/img/gg-bard.png" class="border-radius-img-header"></div>
-                            <div class="news-name">Google ra mắt "AI Bard" để cạnh tranh với ChatGPT AI</div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="news">
-                        <a href="" class="color-black">
-                            <div class="news-img"><img src="/img/gg-bard.png" class="border-radius-img-header"></div>
-                            <div class="news-name">Google ra mắt "AI Bard" để cạnh tranh với ChatGPT AI</div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="news">
-                        <a href="" class="color-black">
-                            <div class="news-img"><img src="/img/gg-bard.png" class="border-radius-img-header"></div>
-                            <div class="news-name">Google ra mắt "AI Bard" để cạnh tranh với ChatGPT AI</div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="news">
-                        <a href="" class="color-black">
-                            <div class="news-img"><img src="/img/gg-bard.png" class="border-radius-img-header"></div>
-                            <div class="news-name">Google ra mắt "AI Bard" để cạnh tranh với ChatGPT AI</div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="news">
-                        <a href="" class="color-black">
-                            <div class="news-img"><img src="/img/gg-bard.png" class="border-radius-img-header"></div>
-                            <div class="news-name">Google ra mắt "AI Bard" để cạnh tranh với ChatGPT AI</div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="news">
-                        <a href="" class="color-black">
-                            <div class="news-img"><img src="/img/gg-bard.png" class="border-radius-img-header"></div>
-                            <div class="news-name">Google ra mắt "AI Bard" để cạnh tranh với ChatGPT AI</div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="news">
-                        <a href="" class="color-black">
-                            <div class="news-img"><img src="/img/gg-bard.png" class="border-radius-img-header"></div>
-                            <div class="news-name">Google ra mắt "AI Bard" để cạnh tranh với ChatGPT AI</div>
-                        </a>
-                    </div>
-                </div>
-            </div>
             <div class="btn-see-more">
                 <a href="" class="btn btn-danger">Xem toàn bộ <i class="fa-solid fa-angles-right"></i></a>
             </div>

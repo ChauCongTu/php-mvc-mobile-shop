@@ -106,9 +106,6 @@
                 <p><a href="#support" class="color-black"><small>&#9679;</small> Liên hệ hỗ trợ</a></p>
             </div>
         </div>
-        <a href="">
-            <img src="/img/banner-main.png" width="100%" alt="Đặt trước Galaxy s23 Series ưu đãi">
-        </a>
         <div class="bg-home pt-4 pb-2">
             <div class="container">
                 <div class="row">
@@ -233,9 +230,9 @@
                     </div>
                     <div class="col-md-3">
                         <div class="search-pos d-flex">
-                            <form action="?search" method="POST">
+                            <form action="/tim-kiem" method="GET">
                                 <div class="input-text p-2 form-search" style="width:150%">
-                                    <input type="text" name="_keyword" class="form-control border border-dark" placeholder="Bạn muốn tìm gì...">
+                                    <input type="text" name="_k" class="form-control border border-dark" placeholder="Bạn muốn tìm gì...">
                                     <span><button class="btn btn-danger border border-dark btn-search text-white"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button></span>
                                 </div>
                             </form>

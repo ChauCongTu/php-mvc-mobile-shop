@@ -1082,3 +1082,144 @@ ul {
     font-size: 20px;
     font-weight: bold;
 }
+.search-result-header {
+    padding: 10px 10px 0 10px;
+    font-size: 20px;
+}
+
+.search-result-nav {
+    padding: 10px 10px 10px 10px;
+}
+
+.search-result-news {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid #dfe6e9;
+}
+
+.panel2 {
+    margin-top: 10px;
+    background-color: #fff;
+}
+
+.filter-list-li li {
+    padding-top: 10px;
+}
+
+.danhmuc-body {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.danhmuc-sanpham {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ecf0f1;
+}
+
+.danhmuc-img {
+    width: 100%;
+}
+
+.danhmuc-img img {
+    width: 100%;
+}
+
+@media only screen and (min-width: 880px) {
+    .danhmuc-sanpham {
+        width: 33%;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .danhmuc-sanpham {
+        width: 25%;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .panel2:first-child {
+        border-right: 10px solid #f1f2f6;
+    }
+}
+.search-result-header {
+    padding: 10px 10px 0 10px;
+    font-size: 20px;
+}
+
+.search-result-nav {
+    padding: 10px 10px 10px 10px;
+}
+
+.search-result-news {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid #dfe6e9;
+}
+
+.panel2 {
+    margin-top: 10px;
+    background-color: #fff;
+}
+
+.form-header {
+    font-size: 18px;
+    padding: 10px;
+    border-bottom: 1px solid #dfe6e9;
+}
+
+.form-body {}
+
+.filter-list-li li {
+    padding-top: 10px;
+}
+
+.danhmuc-body {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.danhmuc-news {
+    width: 100%;
+    padding: 5px;
+    border-bottom: 1px solid #ecf0f1;
+}
+.danhmuc-news:hover{
+    background-color: #ecf0f1;
+}
+
+.danhmuc-img {
+    width: 100%;
+}
+
+.danhmuc-img img {
+    width: 100%;
+}
+.news-info{
+    text-align: right;
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+.news-name{
+    font-size: 18px;
+}
+@media only screen and (min-width: 880px) {
+    .danhmuc-news {
+        width: 33%;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .danhmuc-news {
+        width: 25%;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .panel2:first-child {
+        border-right: 10px solid #f1f2f6;
+    }
+}
