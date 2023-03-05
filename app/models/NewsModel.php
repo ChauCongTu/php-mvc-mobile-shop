@@ -13,22 +13,22 @@ class NewsModel extends Model{
     }
     public function getNews($number = ''){
         if($number==''){
-            $data = $this->db->table($this->_table)->select('*')->get();
+            $data = $this->db->table($this->_table)->select('*')->orderBy('news_id', 'DESC')->get();
             return $data;
         }
-        $data = $this->db->table($this->_table)->select('*')->limit($number)->get();
+        $data = $this->db->table($this->_table)->select('*')->orderBy('news_id', 'DESC')->limit($number)->get();
         return $data;
     }
     public function searchNewsByName($keyword, $orderby = 'newfirst'){
-        if($orderby = 'newfirst'){
+        if($orderby == 'newfirst'){
             $data = $this->db->table($this->_table)->select('*')->whereLike('name', $keyword)->orderBy('pdate', 'DESC')->get();
             return $data;
         }
-        else if($orderby = 'oldfirst'){
+        else if($orderby == 'oldfirst'){
             $data = $this->db->table($this->_table)->select('*')->whereLike('name', $keyword)->orderBy('pdate')->get();
             return $data;
         }
-        else if($orderby = 'hotfirst'){
+        else if($orderby == 'hotfirst'){
             $data = $this->db->table($this->_table)->select('*')->whereLike('name', $keyword)->orderBy('view', 'DESC')->get();
             return $data;
         }

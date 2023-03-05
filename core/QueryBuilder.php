@@ -47,7 +47,7 @@ trait QueryBuilder{
         else{
             $this->operator = ' AND ';
         }
-        $this->condition .= "$this->operator $field LIKE '$values'";
+        $this->condition .= "$this->operator $field LIKE '%$values%'";
         return $this;
     }
     public function orderBy($field, $type = 'ASC'){

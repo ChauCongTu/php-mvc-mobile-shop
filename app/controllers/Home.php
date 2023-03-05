@@ -18,6 +18,7 @@ class Home extends Controller{
         $this->data['sub_content']['flashSaleProduct'] = $product->getProductBestDiscount();
         $this->data['sub_content']['iphoneOutstanding'] = $product->getProductByBrand(2, 10);
         $this->data['sub_content']['tablet'] = $product->getProductByType(2, 10);
+        $this->data['sub_content']['tablet'] = $product->getProductByType(2, 10);
         $this->data['sub_content']['accessory'] = $product->getProductByType(3, 10);
         $this->data["content"] = "home/index";
         $this->render("layouts/client-layout", $this->data);
@@ -35,20 +36,19 @@ class Home extends Controller{
                 $keyword = $_GET['_k'];
                 $this->data['sub_content']['tukhoa'] = $keyword;
                 $this->data["page_title"] = "Kết quả tìm kiếm cho: ".$keyword .' | MobileStore';
-                $this->data['sub_content']['product'] = $product->getProductById($keyword);
-                // if(!isset($_GET['orderby'])){
-                //     $this->data['sub_content']['product'] = $product->searchProductByName($keyword);
-                // }
-                // else{
-                //     $this->data['sub_content']['product'] = $product->searchProductByName($keyword, $_GET['orderby']);
-                // }
+                if(!isset($_GET['orderby'])){
+                    $this->data['sub_content']['product'] = $product->searchProductByName($keyword);
+                }
+                else{
+                    $this->data['sub_content']['product'] = $product->searchProductByName($keyword, $_GET['orderby']);
+                }
                 $this->data["content"] = "mod/searchProduct";
                 $this->render("layouts/client-layout", $this->data);
             }
             else if($_GET['type'] == 'news'){
                 $keyword = $_GET['_k'];
                 $this->data['sub_content']['tukhoa'] = $keyword;
-                $this->data["page_title"] = "Kết quả tìm kiếm cho: ".$keyword;
+                $this->data["page_title"] = "Kết quả tìm kiếm cho: ".$keyword.' | MobileStore';
                 if(!isset($_GET['orderby'])){
                     $this->data['sub_content']['news'] = $news->searchNewsByName($keyword);
                 }

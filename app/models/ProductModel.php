@@ -45,39 +45,49 @@ class ProductModel extends Model{
     }
     public function getProductById($idProduct){
         $data = $this->db->table($this->_tableMain)->select('*')->where('product_id', '=', $idProduct)->first();
-        $data += $this->getDiscountProduct($idProduct);
+        if($this->getDiscountProduct($data['product_id']) != false){
+            $data += $this->getDiscountProduct($data['product_id']);
+        }
         $data += $this->getThumbProduct($idProduct);
         return $data;
     }
     public function searchProductByName($keyword, $orderby = 'newfirst'){
-        if($orderby = 'newfirst'){
+        if($orderby == 'newfirst'){
             $data = $this->db->table($this->_tableMain)->select('*')->whereLike('name', $keyword)->orderBy('product_id', 'DESC')->get();
             for($i = 0; $i < count($data); $i++){
-                $data[$i] += $this->getDiscountProduct($data[$i]['product_id']);
+                if($this->getDiscountProduct($data[$i]['product_id']) != false){
+                    $data[$i] += $this->getDiscountProduct($data[$i]['product_id']);
+                }
                 $data[$i] += $this->getThumbProduct($data[$i]['product_id']);
             }
             return $data;
         }
-        else if($orderby = 'oldfirst'){
+        else if($orderby == 'oldfirst'){
             $data = $this->db->table($this->_tableMain)->select('*')->whereLike('name', $keyword)->orderBy('product_id')->get();
             for($i = 0; $i < count($data); $i++){
-                $data[$i] += $this->getDiscountProduct($data[$i]['product_id']);
+                if($this->getDiscountProduct($data[$i]['product_id']) != false){
+                    $data[$i] += $this->getDiscountProduct($data[$i]['product_id']);
+                }
                 $data[$i] += $this->getThumbProduct($data[$i]['product_id']);
             }
             return $data;
         }
-        else if($orderby = 'cheapfirst'){
-            $data = $this->db->table($this->_tableMain)->select('*')->whereLike('name', $keyword)->orderBy('origin_price', 'DESC')->get();
+        else if($orderby == 'cheapfirst'){
+            $data = $this->db->table($this->_tableMain)->select('*')->whereLike('name', $keyword)->orderBy('origin_price')->get();
             for($i = 0; $i < count($data); $i++){
-                $data[$i] += $this->getDiscountProduct($data[$i]['product_id']);
+                if($this->getDiscountProduct($data[$i]['product_id']) != false){
+                    $data[$i] += $this->getDiscountProduct($data[$i]['product_id']);
+                }
                 $data[$i] += $this->getThumbProduct($data[$i]['product_id']);
             }
             return $data;
         }
-        else if($orderby = 'hotfirst'){
+        else if($orderby == 'hotfirst'){
             $data = $this->db->table($this->_tableMain)->select('*')->whereLike('name', $keyword)->orderBy('view', 'DESC')->get();
             for($i = 0; $i < count($data); $i++){
-                $data[$i] += $this->getDiscountProduct($data[$i]['product_id']);
+                if($this->getDiscountProduct($data[$i]['product_id']) != false){
+                    $data[$i] += $this->getDiscountProduct($data[$i]['product_id']);
+                }
                 $data[$i] += $this->getThumbProduct($data[$i]['product_id']);
             }
             return $data;
@@ -87,14 +97,18 @@ class ProductModel extends Model{
         if ($number == null){
             $data = $this->db->table($this->_tableMain)->select('*')->where('type', '=', $type_code)->get();
             for($i = 0; $i < count($data); $i++){
-                $data[$i] += $this->getDiscountProduct($data[$i]['product_id']);
+                if($this->getDiscountProduct($data[$i]['product_id']) != false){
+                    $data[$i] += $this->getDiscountProduct($data[$i]['product_id']);
+                }
                 $data[$i] += $this->getThumbProduct($data[$i]['product_id']);
             }
             return $data;
         }
         $data = $this->db->table($this->_tableMain)->select('*')->where('type', '=', $type_code)->limit($number)->get();
         for($i = 0; $i < count($data); $i++){
-            $data[$i] += $this->getDiscountProduct($data[$i]['product_id']);
+            if($this->getDiscountProduct($data[$i]['product_id']) != false){
+                $data[$i] += $this->getDiscountProduct($data[$i]['product_id']);
+            }
             $data[$i] += $this->getThumbProduct($data[$i]['product_id']);
         }
         return $data;
@@ -103,14 +117,18 @@ class ProductModel extends Model{
         if ($number == null){
             $data = $this->db->table($this->_tableMain)->select('*')->where('brand_id', '=', $brand_id)->get();
             for($i = 0; $i < count($data); $i++){
-                $data[$i] += $this->getDiscountProduct($data[$i]['product_id']);
+                if($this->getDiscountProduct($data[$i]['product_id']) != false){
+                    $data[$i] += $this->getDiscountProduct($data[$i]['product_id']);
+                }
                 $data[$i] += $this->getThumbProduct($data[$i]['product_id']);
             }
             return $data;
         }
         $data = $this->db->table($this->_tableMain)->select('*')->where('brand_id', '=', $brand_id)->limit($number)->get();
         for($i = 0; $i < count($data); $i++){
-            $data[$i] += $this->getDiscountProduct($data[$i]['product_id']);
+            if($this->getDiscountProduct($data[$i]['product_id']) != false){
+                $data[$i] += $this->getDiscountProduct($data[$i]['product_id']);
+            }
             $data[$i] += $this->getThumbProduct($data[$i]['product_id']);
         }
         return $data;
