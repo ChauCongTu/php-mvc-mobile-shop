@@ -35,6 +35,13 @@ class Home extends Controller{
                 $keyword = $_GET['_k'];
                 $this->data['sub_content']['tukhoa'] = $keyword;
                 $this->data["page_title"] = "Kết quả tìm kiếm cho: ".$keyword .' | MobileStore';
+                $this->data['sub_content']['product'] = $product->getProductById($keyword);
+                // if(!isset($_GET['orderby'])){
+                //     $this->data['sub_content']['product'] = $product->searchProductByName($keyword);
+                // }
+                // else{
+                //     $this->data['sub_content']['product'] = $product->searchProductByName($keyword, $_GET['orderby']);
+                // }
                 $this->data["content"] = "mod/searchProduct";
                 $this->render("layouts/client-layout", $this->data);
             }

@@ -131,7 +131,7 @@ else{
 ?>
 <div class="container">
     <div class="list-product">
-        <div class="flash-sale-header"><img src="/img/—Pngtree—flash sale yellow red 3d_5535040.png" class="img-flash-sale none-on-mobile" width="108px"> SĂN SALE LIỀN TAY - RINH NGAY QUÀ HOT</div>
+        <div class="flash-sale-header"><img src="/images/img/—Pngtree—flash sale yellow red 3d_5535040.png" class="img-flash-sale none-on-mobile" width="108px"> SĂN SALE LIỀN TAY - RINH NGAY QUÀ HOT</div>
     </div>
     <div class="list-product-body bg-danger">
         <div class="slick-without-dots">
