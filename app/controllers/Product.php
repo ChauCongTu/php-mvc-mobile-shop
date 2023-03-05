@@ -21,6 +21,15 @@ class Product extends Controller{
             App::$app->loadError('404');
         }
     }
+    public function category($name, $idBrand, $type='1'){
+        $product = $this->product->getProductByBrand($idBrand, $type);
+        $this->data['page_title'] = 'Danh mục điện thoại '.$this->product->getBrandName($idBrand) . ' | MobileStore';
+        $this->data['sub_content']['brandName'] = $this->product->getBrandName($idBrand);
+        $this->data['sub_content']['product'] = $product;
+        $this->data["content"] = "products/category";
+        $this->render("layouts/client-layout", $this->data);
+
+    }
     public function logout(){
         var_dump(Session::delete('user'));
     }

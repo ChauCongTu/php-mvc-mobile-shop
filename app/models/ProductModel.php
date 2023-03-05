@@ -43,8 +43,8 @@ class ProductModel extends Model{
         $data = $this->db->table($this->_tableDiscount)->select("*")->where('product_id', '=', $idProduct)->first();
         return $data;
     }
-    public function getProductById($idProduct){
-        $data = $this->db->table($this->_tableMain)->select('*')->where('product_id', '=', $idProduct)->first();
+    public function getProductById($idProduct, $type){
+        $data = $this->db->table($this->_tableMain)->select('*')->where('product_id', '=', $idProduct)->where('type', '=', $type)->first();
         if($this->getDiscountProduct($data['product_id']) != false){
             $data += $this->getDiscountProduct($data['product_id']);
         }
@@ -92,6 +92,23 @@ class ProductModel extends Model{
             }
             return $data;
         }
+        else if($orderby == 'expensivefirst'){
+            $data = $this->db->table($this->_tableMain)->select('*')->whereLike('name', $keyword)->orderBy('origin_price', 'DESC')->get();
+            for($i = 0; $i < count($data); $i++){
+                if($this->getDiscountProduct($data[$i]['product_id']) != false){
+                    $data[$i] += $this->getDiscountProduct($data[$i]['product_id']);
+                }
+                $data[$i] += $this->getThumbProduct($data[$i]['product_id']);
+            }
+            return $data;
+        }
+        else if($orderby == 'discountfirst'){
+            $data = $this->db->table($this->_tableMain)->join($this->_tableDiscount, 'product.product_id = product_discount.product_id')->select('*')->whereLike('name', $keyword)->orderBy('(orgin_price - discount_price)', 'DESC')->get();
+            for($i = 0; $i < count($data); $i++){
+                $data[$i] += $this->getThumbProduct($data[$i]['product_id']);
+            }
+            return $data;
+        }
     }
     public function getProductByType($type_code, $number = ''){
         if ($number == null){
@@ -113,9 +130,9 @@ class ProductModel extends Model{
         }
         return $data;
     }
-    public function getProductByBrand($brand_id, $number = ''){
-        if ($number == null){
-            $data = $this->db->table($this->_tableMain)->select('*')->where('brand_id', '=', $brand_id)->get();
+    public function getProductByBrand($brand_id, $type_code='1', $number = '',){
+        if ($number == ''){
+            $data = $this->db->table($this->_tableMain)->select('*')->where('brand_id', '=', $brand_id)->where('type', '=', $type_code)->get();
             for($i = 0; $i < count($data); $i++){
                 if($this->getDiscountProduct($data[$i]['product_id']) != false){
                     $data[$i] += $this->getDiscountProduct($data[$i]['product_id']);
@@ -132,6 +149,14 @@ class ProductModel extends Model{
             $data[$i] += $this->getThumbProduct($data[$i]['product_id']);
         }
         return $data;
+    }
+    public function getBrandName($idBrand){
+        $name = $this->db->table('brand')->select('name')->where('brand_id', '=', $idBrand)->first();
+        extract($name);
+        return $name;
+    }
+    public function filterProduct($data, $condition){
+
     }
     public function addProduct($data){
         if($this->insert($data)) 

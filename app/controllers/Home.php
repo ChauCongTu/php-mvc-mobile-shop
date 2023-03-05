@@ -10,15 +10,17 @@ class Home extends Controller{
         $this->data['page_title'] = "MobileStore.Com - Điện thoại di động, máy tính bảng, phụ kiện giá tốt";
         $banner = $this->model('BannerModel');
         $product = $this->model('ProductModel');
+        $news = $this->model('NewsModel');
         $this->data['sub_content']['centerBanner'] = $banner->getCenterBanner();
         $this->data['sub_content']['headerBanner'] = $banner->getHeaderLongBanner();
         $this->data['sub_content']['longBanner'] = $banner->getLongBanner();
         $this->data['sub_content']['hotBanner'] = $banner->getHotBanner();
         $this->data['sub_content']['brandBanner'] = $banner->getBrandBanner();
         $this->data['sub_content']['flashSaleProduct'] = $product->getProductBestDiscount();
-        $this->data['sub_content']['iphoneOutstanding'] = $product->getProductByBrand(2, 10);
+        $this->data['sub_content']['iphoneOutstanding'] = $product->getProductByBrand(2, 1, 10);
         $this->data['sub_content']['tablet'] = $product->getProductByType(2, 10);
         $this->data['sub_content']['tablet'] = $product->getProductByType(2, 10);
+        $this->data['sub_content']['news'] = $news->getNews(10);
         $this->data['sub_content']['accessory'] = $product->getProductByType(3, 10);
         $this->data["content"] = "home/index";
         $this->render("layouts/client-layout", $this->data);

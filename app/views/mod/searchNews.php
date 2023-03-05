@@ -4,13 +4,13 @@
             <div class="filter">
                 <div class="form-body">
                     <div class="filter-list">
-                        <div class="form-header"><i class="fa-sharp fa-regular fa-filter"></i> Bộ lọc</div>
+                        <div class="form-header"><img src="/images/img/icons8-filter-48.png" alt="icon-filter"> Bộ lọc</div>
                         <div class="list-group list-group-flush">
                             <?php
                             echo '
-                                <a href="/tim-kiem?_k=' . $tukhoa . '&type=product&orderby=newfisrt" class="list-group-item list-group-item-action">Mới nhất trước</a>
-                                <a href="/tim-kiem?_k=' . $tukhoa . '&type=product&orderby=oldfisrt" class="list-group-item list-group-item-action">Cũ nhất trước</a>
-                                <a href="/tim-kiem?_k=' . $tukhoa . '&type=product&orderby=hotfisrt" class="list-group-item list-group-item-action">Nổi bật nhất</a>';
+                                <a href="/tim-kiem?_k=' . $tukhoa . '&type=product&orderby=newfirst" class="list-group-item list-group-item-action">Mới nhất trước</a>
+                                <a href="/tim-kiem?_k=' . $tukhoa . '&type=product&orderby=oldfirst" class="list-group-item list-group-item-action">Cũ nhất trước</a>
+                                <a href="/tim-kiem?_k=' . $tukhoa . '&type=product&orderby=hotfirst" class="list-group-item list-group-item-action">Nổi bật nhất</a>';
                             ?>
                         </div>
                     </div>

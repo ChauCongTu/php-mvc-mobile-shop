@@ -2,7 +2,7 @@
     <div class="row">
         <div class="panel2 col-sm-2">
             <div class="filter">
-                <div class="form-header"><i class="fa-sharp fa-regular fa-filter"></i> Bộ lọc</div>
+                <div class="form-header"><img src="/images/img/icons8-filter-48.png" alt="icon-filter"> Bộ lọc</div>
                 <div class="list-group list-group-flush">
                     <?php
                     echo '
