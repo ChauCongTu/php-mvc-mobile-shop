@@ -6,4 +6,9 @@ if (!function_exists('currency_format')) {
         }
     }
 }
+if (!function_exists('current_url')) {
+    function current_url() {
+        return "http".(!empty($_SERVER['HTTPS'])?"s":"")."://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
+    }
+}
 ?>

@@ -5,17 +5,23 @@
         <div class="danhmuc-nav pb-3">
             <div class="danhmuc-nav-filter">Mức giá</div>
             <div class="danhmuc-nav-tieuchi">
-                <a href="" class="color-black">Dưới 2 triệu</a>
-                <a href="" class="color-black">2-6 triệu</a>
-                <a href="" class="color-black">6-10 triệu</a>
-                <a href="" class="color-black">Trên 10 triệu</a>
+                <?php
+                echo'
+                <a href="'.App::$app->getUrl().'?filter=1" class="color-black">Dưới 2 triệu</a>
+                <a href="'.App::$app->getUrl().'?filter=2" class="color-black">2-6 triệu</a>
+                <a href="'.App::$app->getUrl().'?filter=3" class="color-black">6-10 triệu</a>
+                <a href="'.App::$app->getUrl().'?filter=4" class="color-black">Trên 10 triệu</a>';
+                ?>
             </div>
             <div class="danhmuc-nav-filter">Sắp xếp theo</div>
             <div class="danhmuc-nav-tieuchi">
-                <a href="" class="color-black">Mới nhất</a>
-                <a href="" class="color-black">Ưu đãi</a>
-                <a href="" class="color-black">Đắt nhất</a>
-                <a href="" class="color-black">Rẻ nhất</a>
+                <?php 
+                echo'
+                <a href="'.App::$app->getUrl().'?sort=1" class="color-black">Mới nhất</a>
+                <a href="'.App::$app->getUrl().'?sort=2" class="color-black">Ưu đãi</a>
+                <a href="'.App::$app->getUrl().'?sort=3" class="color-black">Đắt nhất</a>
+                <a href="'.App::$app->getUrl().'?sort=4" class="color-black">Rẻ nhất</a>';
+                ?>
             </div>
         </div>
     </div>

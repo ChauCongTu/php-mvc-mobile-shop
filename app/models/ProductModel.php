@@ -156,7 +156,69 @@ class ProductModel extends Model{
         return $name;
     }
     public function filterProduct($data, $condition){
+        if($condition == 1){
+            for($i = 0; $i < count($data); $i++){
+                if ($data[$i]['origin_price'] > 2000000){
+                    unset($data[$i]);
+                }
+            }
+            return array_values($data);
+        }
+        else if($condition == 2){
+            for($i = 0; $i < count($data); $i++){
+                if ($data[$i]['origin_price'] <= 2000000 || $data[$i]['origin_price'] > 6000000){
+                    unset($data[$i]);
+                }
+            }
+            return array_values($data);
+        }
+        else if($condition == 3){
+            for($i = 0; $i < count($data); $i++){
+                if ($data[$i]['origin_price'] <= 6000000 || $data[$i]['origin_price'] > 10000000){
+                    unset($data[$i]);
+                }
+            }
+            return array_values($data);
+        }
+        else if($condition == 4){
+            for($i = 0; $i < count($data); $i++){
+                if ($data[$i]['origin_price'] < 10000000){
+                    unset($data[$i]);
+                }
+            }
+            return array_values($data);
+        }
+    }
+    public function sortProduct($data, $condition){
+        if($condition == 1){
+            usort($data, function($a, $b) {
+                return $b['product_id'] - $a['product_id'];
+            });
 
+            return $data;
+        }
+        else if($condition == 2){
+            
+            usort($data, function($a, $b) {
+                return $b['product_id'] - $a['product_id'];
+            });
+
+            return $data;
+        }
+        else if($condition == 3){
+            usort($data, function($a, $b) {
+                return $a['origin_price'] - $b['origin_price'];
+            });
+
+            return $data;
+        }
+        else if($condition == 4){
+            usort($data, function($a, $b) {
+                return $b['origin_price'] - $a['origin_price'];
+            });
+
+            return $data;
+        }
     }
     public function addProduct($data){
         if($this->insert($data)) 
