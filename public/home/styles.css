@@ -869,7 +869,9 @@ ul {
     }
 
     .sanpham-right-header {
+        width: 100%;
         margin-top: 10px;
+        padding-left: 10px;
     }
 
     .sanpham-header {

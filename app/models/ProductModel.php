@@ -15,7 +15,13 @@ class ProductModel extends Model{
         return 'product_id';
     }
     public function getAllProduct(){
-        $data = $this->db->table($this->_tableMain)->select("*")->get();
+        $data = $this->db->table($this->_tableMain)->select('*')->get();
+        if($this->getDiscountProduct($data['product_id']) != false){
+            $data += $this->getDiscountProduct($data['product_id']);
+        }
+        if($this->getThumbProduct($data['product_id']) != false){
+            $data += $this->getThumbProduct($data['product_id']);
+        }
         return $data;
     }
     public function getProductBestDiscount($number = ''){
@@ -141,7 +147,7 @@ class ProductModel extends Model{
             }
             return $data;
         }
-        $data = $this->db->table($this->_tableMain)->select('*')->where('brand_id', '=', $brand_id)->limit($number)->get();
+        $data = $this->db->table($this->_tableMain)->select('*')->where('brand_id', '=', $brand_id)->where('type', '=', $type_code)->limit($number)->get();
         for($i = 0; $i < count($data); $i++){
             if($this->getDiscountProduct($data[$i]['product_id']) != false){
                 $data[$i] += $this->getDiscountProduct($data[$i]['product_id']);
@@ -219,6 +225,29 @@ class ProductModel extends Model{
 
             return $data;
         }
+    }
+
+    public function splitProduct($data, $current_page = '1', $total_page, $limit = '10'){
+        $dataAfterSplit = [];
+        if ($current_page > $total_page){
+            $current_page = $total_page;
+        }
+        else if ($current_page < 1){
+            $current_page = 1;
+        }
+        $start = ($current_page - 1) * $limit;
+        $checkStart = 0;
+        $key = 0;
+        foreach($data as $value){
+            if($checkStart < $start)
+                $checkStart ++;
+            else{
+                if($key <= 9){
+                    $dataAfterSplit[$key] = $value;
+                }
+            }
+        }
+        return $dataAfterSplit;
     }
     public function addProduct($data){
         if($this->insert($data)) 

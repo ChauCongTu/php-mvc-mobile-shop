@@ -71,7 +71,7 @@
     <div class="sanpham-body">
         <div class="sanpham-body-config">
             <div class="sanpham-info-header" id="config">
-                Thông số kỹ thuật
+                <i class="fa-solid fa-gears"></i> Thông số | Cấu hình
             </div>
             <div class="sanpham-info-body">
                 <?php

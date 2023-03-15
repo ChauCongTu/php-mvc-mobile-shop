@@ -1,4 +1,3 @@
 <?php
-$text = 'Happy new year';
-echo $text;
+echo (3 - 1) * 10;
 ?>
