@@ -42,5 +42,6 @@ Trang web mua bán điện thoại là một dự án sử dụng công nghệ P
 
 - Code bằng trình biên dịch Visual Studio Code. [Xem hướng dẫn tại đây](https://www.geeksforgeeks.org/how-to-install-visual-studio-code-on-windows/)
 
+
 ### Kết luận: 
   Trang web mua bán điện thoại MobileStore là một project code bởi ChauQueNhon, sử dụng các công nghệ: PHP MVC, MySQL, HTML, CSS, JS và Bootstrap ... nhằm đáp ứng nhu cầu mua bán điện thoại của người dùng. Với các chức năng chính và các công nghệ sử dụng, trang web có thể đáp ứng tốt các nhu cầu của người dùng cũng như cung cấp trải nghiệm mua sắm trực tuyến dễ dàng, hiệu quả.
