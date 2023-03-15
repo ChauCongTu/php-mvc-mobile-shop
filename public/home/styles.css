@@ -883,13 +883,16 @@ ul {
     }
 
     .sanpham-body-config {
-        margin-right: 5px;
-        width: 50%;
+        padding-left: 10px;
+        width: 40%;
+        order: 2;
+        border-left: 2px solid #bfbfbf;
     }
 
     .sanpham-body-info {
-        margin-left: 10px;
-        width: 50%;
+        margin-right: 10px;
+        width: 60%;
+        order: 1;
     }
 }
 
@@ -1035,11 +1038,11 @@ ul {
 
 @media only screen and (min-width: 880px) {
     #sanpham-detail-info {
-        width: 50%;
+        width: 70%;
     }
     
     #sanpham-detail-detail {
-        width: 50%;
+        width: 70%;
     }
     
     #sanpham-detail-config {

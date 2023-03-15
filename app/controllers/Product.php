@@ -13,7 +13,7 @@ class Product extends Controller{
             $this->data['sub_content']['product'] = $product;
             $this->data['sub_content']['img'] = $this->_product->getImageProduct($product['product_id']);
             $this->data['sub_content']['config'] = $this->_product->getConfigProduct($product['product_id']);
-            $this->data['sub_content']['productSameBrand'] = $this->_product->getProductByBrand($product['brand_id'], 10);
+            $this->data['sub_content']['productSameBrand'] = $this->_product->getProductByBrand($product['brand_id'], 1, 10);
             $this->data["content"] = "products/item";
             $this->render("layouts/client-layout", $this->data);
         }

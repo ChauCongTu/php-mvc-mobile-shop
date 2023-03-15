@@ -98,7 +98,7 @@
                 </div>
                 <div class="sanpham-info-body">
                     <?php
-                    echo substr($product['info'], 0, 400) . '</strong></b> ...';
+                    echo substr($product['info'], 0, 650) . '</strong></b> ...';
                     ?>
                     <div class="sanpham-see-more">
                         <div id="sanpham-see-more-btn" onclick="seeInfo()">
@@ -114,7 +114,7 @@
                 </div>
                 <div class="sanpham-info-body">
                     <?php
-                    echo substr($product['detail'], 0, 400) . '</strong></b> ...';
+                    echo substr($product['detail'], 0, 650) . '</strong></b> ...';
                     ?>
                     <div class="sanpham-see-more">
                         <div id="sanpham-see-more-btn" onclick="seeDetail()">
@@ -125,10 +125,6 @@
             </div>
         </div>
     </div>
-</div>
-<style>
-
-</style>
 <div class="container panel mt-2">
     <div class="slick">
         <div class="slick-header">
@@ -146,7 +142,7 @@
                                 <div class="sanpham-thuonghieu-img">
                                     <img src="' . $value['img'] . '">
                                 </div>
-                                <div class="sanpham-thuonghieu-name"><a href="/' . $value['slug_product'] . '-' . $value['product_id'] . '" class="color-black">' . $value['name'] . '</a></div>
+                                <div class="sanpham-thuonghieu-name"><a href="/' . $value['slug_product'] . '_' . $value['product_id'] . '" class="color-black">' . $value['name'] . '</a></div>
                                 <div class="sanpham-price">
                                     <div class="sanpham-price-cost">
                                         <div class="sanpham-sale-price">
@@ -167,7 +163,7 @@
                                 <div class="sanpham-thuonghieu-img">
                                     <img src="' . $value['img'] . '">
                                 </div>
-                                <div class="sanpham-thuonghieu-name"><a href="/' . $value['slug_product'] . '-' . $value['product_id'] . '" class="color-black">' . $value['name'] . '</a></div>
+                                <div class="sanpham-thuonghieu-name"><a href="/' . $value['slug_product'] . '_' . $value['product_id'] . '" class="color-black">' . $value['name'] . '</a></div>
                                 <div class="sanpham-price">
                                     <div class="sanpham-price-cost">
                                         <div class="sanpham-sale-price">
@@ -183,7 +179,7 @@
                             <div class="sanpham-thuonghieu-img">
                                 <img src="' . $value['img'] . '">
                             </div>
-                            <div class="sanpham-thuonghieu-name"><a href="/' . $value['slug_product'] . '-' . $value['product_id'] . '" class="color-black">' . $value['name'] . '</a></div>
+                            <div class="sanpham-thuonghieu-name"><a href="/' . $value['slug_product'] . '_' . $value['product_id'] . '" class="color-black">' . $value['name'] . '</a></div>
                             <div class="sanpham-price">
                                 <div class="sanpham-price-cost">
                                     <div class="sanpham-sale-price">

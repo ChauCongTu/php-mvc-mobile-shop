@@ -43,8 +43,8 @@ class ProductModel extends Model{
         $data = $this->db->table($this->_tableDiscount)->select("*")->where('product_id', '=', $idProduct)->first();
         return $data;
     }
-    public function getProductById($idProduct, $type){
-        $data = $this->db->table($this->_tableMain)->select('*')->where('product_id', '=', $idProduct)->where('type', '=', $type)->first();
+    public function getProductById($idProduct){
+        $data = $this->db->table($this->_tableMain)->select('*')->where('product_id', '=', $idProduct)->first();
         if($this->getDiscountProduct($data['product_id']) != false){
             $data += $this->getDiscountProduct($data['product_id']);
         }

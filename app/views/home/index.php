@@ -46,48 +46,48 @@
         </div>
 
         <div class="col-md-7 mt-2">
-            <div id="demo" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <?php
-                    if (count($centerBanner) > 1) {
-                        for ($i = 0; $i < $centerBanner; $i++) {
-                            echo '<button type="button" data-bs-target="#demo" data-bs-slide-to="' . $i . '"></button>';
+            <div class="slick">
+
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <?php
+                        if(count($centerBanner) > 1){
+                            echo '<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>';
+                            for($i = 1; $i < count($centerBanner); $i++){
+                                echo'<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="'.$i.'" aria-label="Slide '.$i.'"></button>';
+                            }
                         }
-                    }
-                    ?>
-                </div>
-                <div class="carousel-inner border-banner">
-
+                        ?>                        
+                    </div>
+                    <div class="carousel-inner">
+                        <?php
+                        foreach ($centerBanner as $value) {
+                            echo '<div class="carousel-item active">
+                                    <a href="' . $value['link_product'] . '">
+                                        <img src="' . $value['img'] . '" class="d-block w-100 border-radius-img">
+                                    </a>
+                                 </div>';
+                        }
+                        ?>
+                    </div>
                     <?php
-                    foreach ($centerBanner as $value) {
-                        echo '
-                        <div class="carousel-item active">
-                            <a href="' . $value['link_product'] . '">
-                                <img src="' . $value['img'] . '" class="d-block border-radius-img" style="width:100%">
-                            </a>
-                        </div>';
-                    }
+                        if(count($centerBanner) > 1){
+                            echo'<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>';
+                        }
                     ?>
-
                 </div>
-                <!-- Left and right controls/icons -->
-                <?php
-                if (count($centerBanner) > 1) {
-                    echo '<button class="carousel-control-prev none-on-mobile" type="button" data-bs-target="#demo" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon"></span>
-                        </button>
-                        <button class="carousel-control-next none-on-mobile" type="button" data-bs-target="#demo" data-bs-slide="next">
-                            <span class="carousel-control-next-icon"></span>
-                        </button>';
-                }
-                ?>
+
             </div>
         </div>
 
         <div class="col-md-3 pt-2 rounded-3">
-            <a href="" class="text-muted none-underline h4">
-                <div class="text-center"> - Khuyến mãi <span class="text-danger">HOT </span>-</div>
-            </a>
             <div class="flex-on-mobile">
                 <?php
                 if (count($hotBanner) == 0) {
@@ -363,17 +363,17 @@ if (count($flashSaleProduct) == 0) {
         <div class="bg-white">
             <div class="row the-news">
                 <?php
-                foreach($news as $value){
-                    echo'<div class="news">
-                            <a href="/bai-viet/'.$value['slug'].'" class="color-black">
-                                <div class="news-img"><img src="'.$value['thumb'].'" class="border-radius-img-header"></div>
-                                <div class="news-name">'.$value['name'].'</div>
+                foreach ($news as $value) {
+                    echo '<div class="news">
+                            <a href="/bai-viet/' . $value['slug'] . '" class="color-black">
+                                <div class="news-img"><img src="' . $value['thumb'] . '" class="border-radius-img-header"></div>
+                                <div class="news-name">' . $value['name'] . '</div>
                             </a>
                         </div>';
                 }
                 ?>
                 <div class="col-sm-3">
-                    
+
                 </div>
                 <div class="btn-see-more">
                     <a href="" class="btn btn-danger">Xem toàn bộ <i class="fa-solid fa-angles-right"></i></a>
