@@ -76,7 +76,7 @@
             <div class="sanpham-info-body">
                 <?php
                 for ($i = 0; $i <= 5; $i++) {
-                    echo '<div class="row">
+                    echo '<div class="row config-line">
                             <div class="col-sm-4">' . $config[$i]['conf_key'] . '</div>
                             <div class="col-sm-8">' . $config[$i]['conf_value'] . '</div>
                         </div>

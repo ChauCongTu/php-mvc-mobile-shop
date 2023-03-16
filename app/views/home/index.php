@@ -51,13 +51,13 @@
                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
                         <?php
-                        if(count($centerBanner) > 1){
+                        if (count($centerBanner) > 1) {
                             echo '<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>';
-                            for($i = 1; $i < count($centerBanner); $i++){
-                                echo'<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="'.$i.'" aria-label="Slide '.$i.'"></button>';
+                            for ($i = 1; $i < count($centerBanner); $i++) {
+                                echo '<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="' . $i . '" aria-label="Slide ' . $i . '"></button>';
                             }
                         }
-                        ?>                        
+                        ?>
                     </div>
                     <div class="carousel-inner">
                         <?php
@@ -71,8 +71,8 @@
                         ?>
                     </div>
                     <?php
-                        if(count($centerBanner) > 1){
-                            echo'<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    if (count($centerBanner) > 1) {
+                        echo '<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Previous</span>
                                 </button>
@@ -80,7 +80,7 @@
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Next</span>
                                 </button>';
-                        }
+                    }
                     ?>
                 </div>
 
@@ -146,9 +146,10 @@ if (count($flashSaleProduct) == 0) {
                                 <div class="slick-sale-price">' . currency_format($value['discount_price']) . '</div>
                                 <div class="slick-origin-price"> <del>' . currency_format($value['origin_price']) . '</del></div>
                             </div>
-                            <a href="/' . $value['slug_product'] . '_' . $value['product_id'] . '" class="none-underline">
-                                <div class="slick-order-button"> Xem chi tiết</div>
-                            </a>
+                                <a href="/' . $value['slug_product'] . '_' . $value['product_id'] . '" class="none-underline">
+                                    <div class="slick-order-button"> Xem chi tiết</div>
+                                </a>
+                            
                         </div>
                     </div>';
                 }

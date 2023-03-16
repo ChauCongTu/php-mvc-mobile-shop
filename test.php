@@ -1,3 +1,4 @@
-<?php
-echo (3 - 1) * 10;
-?>
+if(image.lengh > 0){
+    string _filename = Path.GetFileName(Images.filename);
+    string _path
+}

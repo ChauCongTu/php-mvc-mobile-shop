@@ -27,6 +27,7 @@ class Product extends Controller{
         $total_page = ceil($total_product/$limit);
         $current_page = (isset($_GET['page']))?$_GET['page']:1;
         $product = $this->_product->getProductByBrand($idBrand, $type);
+        
         $filter = (isset($_GET['filter']))?$_GET['filter']:false;
         $sort = (isset($_GET['sort']))?$_GET['sort']:false;
         $this->data['page_title'] = 'Danh mục điện thoại '.$this->_product->getBrandName($idBrand) . ' | MobileStore';
@@ -37,7 +38,9 @@ class Product extends Controller{
         if($sort != false){
             $product = $this->_product->sortProduct($product, $sort);
         }
+        $total_product = count($product);
         $product = $this->_product->splitProduct($product, $current_page, $total_page, $limit);
+        $total_page = ceil($total_product/$limit);
         $this->data['sub_content']['product'] = $product;
         $this->data['sub_content']['total_page'] = $total_page;
         $this->data['sub_content']['current_page'] = $current_page;

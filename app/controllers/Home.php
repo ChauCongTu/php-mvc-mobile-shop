@@ -16,7 +16,7 @@ class Home extends Controller{
         $this->data['sub_content']['longBanner'] = $banner->getLongBanner();
         $this->data['sub_content']['hotBanner'] = $banner->getHotBanner();
         $this->data['sub_content']['brandBanner'] = $banner->getBrandBanner();
-        $this->data['sub_content']['flashSaleProduct'] = $product->getProductBestDiscount();
+        $this->data['sub_content']['flashSaleProduct'] = $product->getProductBestDiscount(10);
         $this->data['sub_content']['iphoneOutstanding'] = $product->getProductByBrand(2, 1, 10);
         $this->data['sub_content']['tablet'] = $product->getProductByType(2, 10);
         $this->data['sub_content']['tablet'] = $product->getProductByType(2, 10);

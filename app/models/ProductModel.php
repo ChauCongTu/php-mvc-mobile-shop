@@ -242,8 +242,9 @@ class ProductModel extends Model{
             if($checkStart < $start)
                 $checkStart ++;
             else{
-                if($key <= 9){
+                if($key <= $limit-1){
                     $dataAfterSplit[$key] = $value;
+                    $key ++;
                 }
             }
         }

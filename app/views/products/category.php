@@ -21,12 +21,11 @@
     </div>
 </div>
 <div class="container panel mt-2">
-    <div class="danhmuc">
+    <div class="danhmuc pt-3">
         <div class="danhmuc-body">
             <?php
             $now = date('Y-m-d H:i:s');
             foreach ($product as $value) {
-
                 if (isset($value['end_discount']) && $now <= $value['end_discount']) {
                     echo '<div class="danhmuc-sanpham">
                             <div class="sale-info"></div>
@@ -69,14 +68,30 @@
         if ($total_page > 1) {
             for ($i = 1; $i <= $total_page; $i++) {
                 if ($i == $current_page)
-                    echo "<a class='btn btn-danger' onclick='getPageRequest($i)'>" . $i . "</a>";
+                    echo "<a class='btn btn-danger ms-2' onclick='getPageRequest($i)'>" . $i . "</a>";
                 else
-                echo "<a class='btn btn-outline-danger' onclick='getPageRequest($i)'>" . $i . "</a>";
+                    echo "<a class='btn btn-outline-danger ms-2' onclick='getPageRequest($i)'>" . $i . "</a>";
             }
         }
         ?>
     </div>
 </div>
 <script>
-    
+    // Thêm request vào GET hiện tại
+function addGetRequest($name, $value) {
+    var url = new URL(window.location.href);
+    if (url.searchParams.has($name)) {
+        url.searchParams.delete($name);
+    }
+    url.searchParams.append($name, $value);
+    window.location.href = url.href;
+}
+function getPageRequest($value) {
+    var url = new URL(window.location.href);
+    if (url.searchParams.has('page')) {
+        url.searchParams.delete('page');
+    }
+    url.searchParams.append('page', $value);
+    window.location.href = url.href;
+}
 </script>
