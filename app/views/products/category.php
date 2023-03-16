@@ -34,11 +34,11 @@
                                 </div>
                                 <div class="danhmuc-info">
                                     <a href="/' . $value['slug_product'] . '_' . $value['product_id'] . '" class="color-black">
-                                        <div class="danhmuc-name">' . $value['name'] . '</div>
+                                        <div class="product-name">' . $value['name'] . '</div>
                                     </a>
-                                    <div class="slick-price">
-                                        <div class="slick-sale-price">' . currency_format($value['discount_price']) . '</div>
-                                        <div class="slick-origin-price"> <del>' . currency_format($value['discount_price']) . '</del></div>
+                                    <div class="product-price">
+                                        <div class="product-sale-price">' . currency_format($value['discount_price']) . '</div>
+                                        <div class="product-origin-price"> <del>' . currency_format($value['origin_price']) . '</del></div>
                                     </div>
                                 </div>
                             </div>';
@@ -50,10 +50,10 @@
                                 </div>
                                 <div class="danhmuc-info">
                                     <a href="/' . $value['slug_product'] . '_' . $value['product_id'] . '" class="color-black">
-                                        <div class="danhmuc-name">' . $value['name'] . '</div>
+                                        <div class="product-name">' . $value['name'] . '</div>
                                     </a>
-                                    <div class="slick-price">
-                                        <div class="slick-sale-price">' . currency_format($value['origin_price']) . '</div>
+                                    <div class="product-price">
+                                        <div class="product-sale-price">' . currency_format($value['origin_price']) . '</div>
                                     </div>
                                 </div>
                             </div>';
@@ -78,20 +78,21 @@
 </div>
 <script>
     // Thêm request vào GET hiện tại
-function addGetRequest($name, $value) {
-    var url = new URL(window.location.href);
-    if (url.searchParams.has($name)) {
-        url.searchParams.delete($name);
+    function addGetRequest($name, $value) {
+        var url = new URL(window.location.href);
+        if (url.searchParams.has($name)) {
+            url.searchParams.delete($name);
+        }
+        url.searchParams.append($name, $value);
+        window.location.href = url.href;
     }
-    url.searchParams.append($name, $value);
-    window.location.href = url.href;
-}
-function getPageRequest($value) {
-    var url = new URL(window.location.href);
-    if (url.searchParams.has('page')) {
-        url.searchParams.delete('page');
+
+    function getPageRequest($value) {
+        var url = new URL(window.location.href);
+        if (url.searchParams.has('page')) {
+            url.searchParams.delete('page');
+        }
+        url.searchParams.append('page', $value);
+        window.location.href = url.href;
     }
-    url.searchParams.append('page', $value);
-    window.location.href = url.href;
-}
 </script>

@@ -367,6 +367,9 @@ ul {
     padding-bottom: 7px;
 }
 
+.product-sale-price {
+    color: #dc3545;
+}
 .slick-order-button {
     text-align: center;
     font-size: 15px;

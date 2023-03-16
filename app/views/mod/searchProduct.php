@@ -41,9 +41,9 @@
                                                 <a href="/' . $value['slug_product'] . '_' . $value['product_id'] . '" class="color-black">
                                                     <div class="danhmuc-name">' . $value['name'] . '</div>
                                                 </a>
-                                                <div class="slick-price">
-                                                    <div class="slick-sale-price">' . currency_format($value['discount_price']) . '</div>
-                                                    <div class="slick-origin-price"> <del>' . currency_format($value['origin_price']) . '</del></div>
+                                                <div class="product-price">
+                                                    <div class="product-sale-price">' . currency_format($value['discount_price']) . '</div>
+                                                    <div class="product-origin-price"> <del>' . currency_format($value['origin_price']) . '</del></div>
                                                 </div>
                                             </div>
                                         </div>';
@@ -58,8 +58,8 @@
                                                 <a href="/' . $value['slug_product'] . '_' . $value['product_id'] . '" class="color-black">
                                                     <div class="danhmuc-name">' . $value['name'] . '</div>
                                                 </a>
-                                                <div class="slick-price">
-                                                    <div class="slick-sale-price">' . currency_format($value['origin_price']) . '</div>
+                                                <div class="product-price">
+                                                    <div class="product-sale-price">' . currency_format($value['origin_price']) . '</div>
                                                 </div>
                                             </div>
                                         </div>';

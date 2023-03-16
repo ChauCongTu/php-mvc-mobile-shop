@@ -125,109 +125,108 @@
             </div>
         </div>
     </div>
-<div class="container panel mt-2">
-    <div class="slick">
-        <div class="slick-header">
-            <div class="slick-header-title">Cùng thương hiệu</div>
-            <div class="slick-arrow"></div>
-        </div>
-        <div class="slick-body">
-            <?php
-            $now = date('Y-m-d H:i:s');
-            foreach ($productSameBrand as $value) {
-                if (isset($value['end_discount'])) {
-                    if ($now <= $value['end_discount']) {
-                        $discount = round((($value['origin_price'] - $value['discount_price']) / $value['origin_price']) * 100);
-                        echo '<div class="slick-item">
-                                <div class="sanpham-thuonghieu-img">
-                                    <img src="' . $value['img'] . '">
-                                </div>
-                                <div class="sanpham-thuonghieu-name"><a href="/' . $value['slug_product'] . '_' . $value['product_id'] . '" class="color-black">' . $value['name'] . '</a></div>
-                                <div class="sanpham-price">
-                                    <div class="sanpham-price-cost">
-                                        <div class="sanpham-sale-price">
-                                            ' . currency_format($value['discount_price']) . '
+    <div class="container panel mt-2">
+        <div class="slick">
+            <div class="slick-header">
+                <div class="slick-header-title">Sản phẩm cùng thương hiệu</div>
+                <div class="slick-arrow"></div>
+            </div>
+            <div class="slick-body">
+                <?php
+                $now = date('Y-m-d H:i:s');
+                foreach ($productSameBrand as $value) {
+                    if (isset($value['end_discount'])) {
+                        if ($now <= $value['end_discount']) {
+                            $discount = round((($value['origin_price'] - $value['discount_price']) / $value['origin_price']) * 100);
+                            echo '<div class="slick-item">
+                                    <div class="slick-product-slider">
+                                        <div class="slick-sale-info"><span> Giảm ' . $discount . '%</span></div>
+                                        <div class="slick-img-product-sale">
+                                            <img src="' . $value['img'] . '">
                                         </div>
-                                        <div class="sanpham-origin-price">
-                                            <del>' . currency_format($value['origin_price']) . '</del>
+                                        <div class="slick-name-product">' . $value['name'] . '</div>
+                                        <div class="slick-price">
+                                            <div class="slick-sale-price">' . currency_format($value['discount_price']) . '</div>
+                                            <div class="slick-origin-price"> <del>' . currency_format($value['origin_price']) . '</del></div>
                                         </div>
+                                        <a href="/' . $value['slug_product'] . '_' . $value['product_id'] . '" class="none-underline">
+                                            <div class="slick-order-button"> Xem chi tiết</div>
+                                        </a>
                                     </div>
-                                    <div class="sanpham-info-decrease">
-                                        <span>-' . $discount . '%</span>
+                                </div>';
+                        } else if ($value['product_id'] == $product['product_id']) {
+                        } else {
+                            echo '<div class="slick-item">
+                                    <div class="slick-product-slider">
+                                        <div class="slick-img-product-sale">
+                                            <img src="' . $value['img'] . '">
+                                        </div>
+                                        <div class="slick-name-product">' . $value['name'] . '</div>
+                                        <div class="slick-price">
+                                            <div class="slick-sale-price">' . currency_format($value['origin_price']) . '</div>
+                                        </div>
+                                        <a href="/' . $value['slug_product'] . '_' . $value['product_id'] . '" class="none-underline">
+                                            <div class="slick-order-button"> Xem chi tiết</div>
+                                        </a>
                                     </div>
-                                </div>
-                            </div>';
+                                </div>';
+                        }
                     } else if ($value['product_id'] == $product['product_id']) {
                     } else {
                         echo '<div class="slick-item">
-                                <div class="sanpham-thuonghieu-img">
-                                    <img src="' . $value['img'] . '">
-                                </div>
-                                <div class="sanpham-thuonghieu-name"><a href="/' . $value['slug_product'] . '_' . $value['product_id'] . '" class="color-black">' . $value['name'] . '</a></div>
-                                <div class="sanpham-price">
-                                    <div class="sanpham-price-cost">
-                                        <div class="sanpham-sale-price">
-                                            ' . currency_format($value['origin_price']) . '
+                                    <div class="slick-product-slider">
+                                        <div class="slick-img-product-sale">
+                                            <img src="' . $value['img'] . '">
                                         </div>
+                                        <div class="slick-name-product">' . $value['name'] . '</div>
+                                        <div class="slick-price">
+                                            <div class="slick-sale-price">' . currency_format($value['origin_price']) . '</div>
+                                        </div>
+                                        <a href="/' . $value['slug_product'] . '_' . $value['product_id'] . '" class="none-underline">
+                                            <div class="slick-order-button"> Xem chi tiết</div>
+                                        </a>
                                     </div>
-                                </div>
-                            </div>';
+                                </div>';
                     }
-                } else if ($value['product_id'] == $product['product_id']) {
-                } else {
-                    echo '<div class="slick-item">
-                            <div class="sanpham-thuonghieu-img">
-                                <img src="' . $value['img'] . '">
-                            </div>
-                            <div class="sanpham-thuonghieu-name"><a href="/' . $value['slug_product'] . '_' . $value['product_id'] . '" class="color-black">' . $value['name'] . '</a></div>
-                            <div class="sanpham-price">
-                                <div class="sanpham-price-cost">
-                                    <div class="sanpham-sale-price">
-                                        ' . currency_format($value['origin_price']) . '
-                                    </div>
-                                </div>
-                            </div>
-                        </div>';
                 }
-            }
-            ?>
+                ?>
 
+            </div>
         </div>
     </div>
-</div>
-<div class="sanpham-detail">
-    <div id="sanpham-nenmo" onclick="closeDI()"></div>
-    <div id="sanpham-detail-info">
-        <div class="sanpham-info-header">Thông tin sản phẩm <span class="sanpham-detail-close" onclick="closeDI()"><i class="fa-solid fa-x"></i></span></div>
-        <div class="scroll-pane">
-            <?php
-            echo $product['info'];
-            ?>
+    <div class="sanpham-detail">
+        <div id="sanpham-nenmo" onclick="closeDI()"></div>
+        <div id="sanpham-detail-info">
+            <div class="sanpham-info-header">Thông tin sản phẩm <span class="sanpham-detail-close" onclick="closeDI()"><i class="fa-solid fa-x"></i></span></div>
+            <div class="scroll-pane">
+                <?php
+                echo $product['info'];
+                ?>
+            </div>
         </div>
-    </div>
 
 
-    <div id="sanpham-detail-detail">
-        <div class="sanpham-info-header">Thông tin chi tiết <span class="sanpham-detail-close" onclick="closeDI()"><i class="fa-solid fa-x"></i></div>
-        <div class="scroll-pane">
-            <?php
-            echo $product['detail'];
-            ?>
+        <div id="sanpham-detail-detail">
+            <div class="sanpham-info-header">Thông tin chi tiết <span class="sanpham-detail-close" onclick="closeDI()"><i class="fa-solid fa-x"></i></div>
+            <div class="scroll-pane">
+                <?php
+                echo $product['detail'];
+                ?>
+            </div>
         </div>
-    </div>
 
-    <div id="sanpham-detail-config">
-        <div class="sanpham-info-header">Thông tin cấu hình <span class="sanpham-detail-close" onclick="closeDI()"><i class="fa-solid fa-x"></i></span></div>
-        <div class="scroll-pane">
-            <?php
-            foreach ($config as $value) {
-                echo '<div class="row">
+        <div id="sanpham-detail-config">
+            <div class="sanpham-info-header">Thông tin cấu hình <span class="sanpham-detail-close" onclick="closeDI()"><i class="fa-solid fa-x"></i></span></div>
+            <div class="scroll-pane">
+                <?php
+                foreach ($config as $value) {
+                    echo '<div class="row">
                         <div class="col-sm-4">' . $value['conf_key'] . '</div>
                         <div class="col-sm-8">' . $value['conf_value'] . '</div>
                     </div>
                     <hr>';
-            }
-            ?>
+                }
+                ?>
+            </div>
         </div>
     </div>
-</div>
