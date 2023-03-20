@@ -311,7 +311,7 @@ if (count($flashSaleProduct) == 0) {
 <!-- Các sản phẩm Iphone giảm nhiều nhất -->
 <div class="container">
     <div class="list-product">
-        <div class="list-product-header">Máy tính bảng nổi bật <span class="hot-key"><a href="">Ipad pro</a><a href="">Galaxy Tab</a></span></div>
+        <div class="list-product-header">Máy tính bảng nổi bật </div>
     </div>
     <div class="list-product-body">
         <div class="slick-without-dots">
@@ -358,27 +358,24 @@ if (count($flashSaleProduct) == 0) {
     </div>
 </div>
 <!--  -->
-<div class="container none-on-mobile">
+<div class="container">
     <div class="list-product">
-        <div class="list-product-header">Bản tin công nghệ</div>
+        <div class="list-product-header bg-white text-dark">Bản tin công nghệ</div>
         <div class="bg-white">
-            <div class="row the-news">
-                <?php
-                foreach ($news as $value) {
-                    echo '<div class="news">
-                            <a href="/bai-viet/' . $value['slug'] . '" class="color-black">
-                                <div class="news-img"><img src="' . $value['thumb'] . '" class="border-radius-img-header"></div>
-                                <div class="news-name">' . $value['name'] . '</div>
-                            </a>
-                        </div>';
-                }
-                ?>
-                <div class="col-sm-3">
-
-                </div>
-                <div class="btn-see-more">
-                    <a href="" class="btn btn-danger">Xem toàn bộ <i class="fa-solid fa-angles-right"></i></a>
+            <div class="slick">
+                <div class="slick-body">
+                    <?php
+                    foreach ($news as $value) {
+                        echo '<div class="slick-item">
+                                <a href="/' . $value['slug'] . '_id' . $value['news_id'] . '" class="color-black">
+                                    <div class="news-img"><img src="' . $value['thumb'] . '" class="border-radius-img-header"></div>
+                                    <div class="news-name">' . $value['name'] . '</div>
+                                </a>
+                            </div>';
+                    }
+                    ?>
                 </div>
             </div>
         </div>
     </div>
+</div>

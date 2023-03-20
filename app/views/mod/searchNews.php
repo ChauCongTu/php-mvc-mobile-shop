@@ -31,19 +31,18 @@
                             <img src="/images/img/oops.png" width="100%" alt="Có lỗi xảy ra...">
                             ';
                         } else {
-                            echo '<p>Tìm thấy ' . count($news) . ' kết quả</p>';
                             foreach ($news as $value) {
                                 echo '<div class="danhmuc-news">
                                         <div class="danhmuc-img">
                                             <img src="' . $value['thumb'] . '" class="none-on-mobile">
                                         </div>
                                         <div class="danhmuc-info">
-                                            <a href="" class="color-black">
+                                            <a href="/'.$value['slug'].'_id'.$value['news_id'].'" class="color-black">
                                                 <div class="news-name">' . $value['name'] . '</div>
                                             </a>
                                             <div class="news-info">
                                                 <div class="news-author">Châu Quế Nhơn</div>
-                                                <div class="news-date">' . $value['pdate'] . '</div>
+                                                <div class="news-date">'.displayTime($value['pdate']).'</div>
                                             </div>
                                         </div>
                                     </div>';

@@ -31,6 +31,16 @@ class NewsModel extends Model{
         
         return($data);
     }
+    public function getTrendNews(){
+        $data = $this->db->table($this->_table)->select('*')->orderBy('view', 'DESC')->limit(4)->get();
+        for($i = 0; $i < count($data); $i++){
+            if(isset($data[$i]['news_id'])){
+                $data[$i] += $this->getAuthorPost($data[$i]['users_id']); 
+            }
+        }
+        
+        return($data);
+    }
     public function searchNewsByName($keyword, $orderby = 'newfirst'){
         if($orderby == 'newfirst'){
             $data = $this->db->table($this->_table)->select('*')->whereLike('name', $keyword)->orderBy('pdate', 'DESC')->get();
@@ -46,7 +56,9 @@ class NewsModel extends Model{
         }
     }
     public function getNewsById($idNews){
-        $data = $this->db->table($this->_table)->select('*')->where('news_id', '=', $idNews)->get();
+        $data = $this->db->table($this->_table)->select('*')->where('news_id', '=', $idNews)->first();
+        if(isset($data['users_id']))
+            $data += $this->getAuthorPost($data['users_id']);
         return $data;
     }
     public function getAuthorPost($idUser){

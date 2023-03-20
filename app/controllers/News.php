@@ -19,4 +19,14 @@ class News extends Controller{
         $this->data["content"] = "news/category";
         $this->render("layouts/client-layout", $this->data);
     }
+    public function post($slug, $idPost){
+        $news = $this->model_news->getNewsById($idPost);
+        $hotNews = $this->model_news->getTrendNews($idPost);
+        $this->data['page_title'] = $news['name'].' - MobileStore';
+        $total_news = count($news);
+        $this->data["sub_content"]['news'] = $news;
+        $this->data["sub_content"]['hotNews'] = $hotNews;
+        $this->data["content"] = "news/post";
+        $this->render("layouts/client-layout", $this->data);
+    }
 }

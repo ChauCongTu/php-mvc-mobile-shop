@@ -1115,6 +1115,16 @@ ul {
     cursor: pointer;
 }
 
+.footer{
+    width: 100%;
+    float: left;
+    border-top: solid 3px #35bf76;
+    background-image: url(http://localhost:8080/images/img/foot.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+}
+
 .foot-support {
     position: relative;
     display: flex;

@@ -164,20 +164,3 @@ function closeDI() {
         document.getElementById('sanpham-detail-detail').style.left = '500%'
         document.getElementById('sanpham-detail-config').style.left = '500%'
 }
-// Thêm request vào GET hiện tại
-function addGetRequest($name, $value) {
-    var url = new URL(window.location.href);
-    if (url.searchParams.has($name)) {
-        url.searchParams.delete($name);
-    }
-    url.searchParams.append($name, $value);
-    window.location.href = url.href;
-}
-function getPageRequest($value) {
-    var url = new URL(window.location.href);
-    if (url.searchParams.has('page')) {
-        url.searchParams.delete('page');
-    }
-    url.searchParams.append('page', $value);
-    window.location.href = url.href;
-}
