@@ -6,13 +6,32 @@
     opacity: 0.3;
 }
 
-body{
+body {
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: normal;
 }
 
-tbody, td, tfoot, th, thead, tr {
+body.dark-theme {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-theme a {
+    color: #f0f0f0;
+}
+
+.dark-theme button {
+    background-color: #555;
+    color: #fff;
+}
+
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
     border-color: inherit;
     border-style: solid;
     border-width: 1;
@@ -317,12 +336,14 @@ ul {
     border-radius: .2rem;
     height: 400px;
 }
-.slick-img-product-sale{
+
+.slick-img-product-sale {
     position: absolute;
     top: 32px;
     width: 100%;
     left: 0;
 }
+
 .slick-img-product-sale img {
     width: 100%;
 }
@@ -349,10 +370,11 @@ ul {
     bottom: 50px;
 }
 
-.btn-buy{
+.btn-buy {
     position: absolute;
     bottom: 10px;
 }
+
 .slick-sale-price {
     color: #dc3545;
     font-weight: bold;
@@ -378,6 +400,7 @@ ul {
     font-size: 14px;
     line-height: 1.6;
 }
+
 .slick-order-button {
     text-align: center;
     font-size: 15px;
@@ -399,7 +422,7 @@ ul {
 }
 
 @media only screen and (max-width: 880px) {
-    .slick-product-slider{
+    .slick-product-slider {
         height: 500px;
     }
 }
@@ -1090,15 +1113,15 @@ ul {
     #sanpham-detail-info {
         width: 70%;
     }
-    
+
     #sanpham-detail-detail {
         width: 70%;
     }
-    
+
     #sanpham-detail-config {
         width: 50%;
     }
-    
+
 }
 
 .scroll-pane {
@@ -1115,7 +1138,7 @@ ul {
     cursor: pointer;
 }
 
-.footer{
+.footer {
     width: 100%;
     background-color: #fff;
 }
@@ -1131,16 +1154,23 @@ ul {
 }
 
 @media only screen and (max-width: 880px) {
-    #foot-body-1, #foot-body-2, #foot-body-3 {
+
+    #foot-body-1,
+    #foot-body-2,
+    #foot-body-3 {
         display: none;
         transition: all .3s;
     }
+
     .footer-dropdown {
         margin-top: 5px;
         margin-right: 5px;
         float: right;
     }
-    #pull-up-branch, #pull-up-faq, #pull-up-support{
+
+    #pull-up-branch,
+    #pull-up-faq,
+    #pull-up-support {
         margin-top: 5px;
         margin-right: 5px;
         float: right;
@@ -1158,6 +1188,7 @@ ul {
     font-size: 20px;
     font-weight: bold;
 }
+
 .search-result-header {
     padding: 10px 10px 0 10px;
     font-size: 20px;
@@ -1219,6 +1250,7 @@ ul {
         border-right: 10px solid #f1f2f6;
     }
 }
+
 .search-result-header {
     padding: 10px 10px 0 10px;
     font-size: 20px;
@@ -1262,7 +1294,8 @@ ul {
     padding: 5px;
     border-bottom: 1px solid #ecf0f1;
 }
-.danhmuc-news:hover{
+
+.danhmuc-news:hover {
     background-color: #ecf0f1;
 }
 
@@ -1273,15 +1306,17 @@ ul {
 .danhmuc-img img {
     width: 100%;
 }
-.news-info{
+
+.news-info {
     text-align: right;
     font-size: 14px;
     color: #7f8c8d;
 }
 
-.news-name{
+.news-name {
     font-size: 18px;
 }
+
 @media only screen and (min-width: 880px) {
     .danhmuc-news {
         width: 33%;
@@ -1299,6 +1334,7 @@ ul {
         border-right: 10px solid #f1f2f6;
     }
 }
+
 .danhmuc {
     position: relative;
     background-color: #fff;
@@ -1369,6 +1405,7 @@ ul {
         width: 20%;
     }
 }
+
 .cart-header {
     padding: 10px 5px;
     font-size: 20px;
@@ -1379,7 +1416,8 @@ ul {
 .cart-count {
     margin: 5px 0;
 }
-.cart-left{
+
+.cart-left {
     padding: 0 5px;
 }
 
@@ -1470,11 +1508,11 @@ ul {
 }
 
 .input-promo-code {
-    width: 90%;
+    width: 80%;
 }
 
 .button-promo-code {
-    width: 10%;
+    width: 20%;
 }
 
 .cart-note {
@@ -1545,6 +1583,7 @@ ul {
         right: 80px;
     }
 }
+
 .blog {
     width: 100%;
 }
@@ -1601,7 +1640,7 @@ ul {
     margin-left: 10px;
 }
 
-.menu-filter{
+.menu-filter {
     position: absolute;
     right: 10px;
 }
@@ -1618,15 +1657,15 @@ ul {
         border-bottom: none;
         padding: 0 5px;
     }
-    .blog-post:hover{
-        
-    }
+
+    .blog-post:hover {}
 
     .blog-img {
         width: 100%;
         height: auto;
     }
-    .blog-img img{
+
+    .blog-img img {
         border-radius: 0;
     }
 
@@ -1636,28 +1675,33 @@ ul {
 }
 
 /* Post css */
-.bg-post{
+.bg-post {
     background-color: #fff;
 }
-.bg-container{
+
+.bg-container {
     display: block;
     margin: auto;
     width: 65%;
 }
-.post-content p{
+
+.post-content p {
     font-size: 16px;
     color: #333;
     line-height: 1.5;
 }
+
 .post-content {
     width: 100%;
 }
+
 .post-content img {
     width: 100%;
     display: block;
     margin: auto;
 }
-.captionnews{
+
+.captionnews {
     width: 100%;
     display: block;
     margin: auto;
@@ -1669,15 +1713,17 @@ ul {
     background: #f6f6f6;
     line-height: 1.5;
 }
+
 .post-name {
     display: block;
     overflow: hidden;
     line-height: 1.3em;
     font-size: 30px;
     color: #333;
-    font-family: 'Roboto Condensed',sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
     font-weight: 600;
 }
+
 .post-author {
     display: inline-block;
     font-size: 14px;
@@ -1686,18 +1732,31 @@ ul {
     margin: -2px 5px 0;
     padding: 10px;
 }
+
+.post-hot-head {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    font-family: 'Roboto Condensed', sans-serif;
+    line-height: 26px;
+    text-transform: uppercase;
+    margin-left: 5px;
+}
+
 @media only screen and (max-width: 800px) {
-    .bg-container{
+    .bg-container {
         width: 85%;
     }
 }
+
 @media only screen and (max-width: 500px) {
-    .bg-container{
+    .bg-container {
         width: 95%;
     }
 }
+
 @media only screen and (max-width: 480px) {
-    .bg-container{
+    .bg-container {
         width: 95%;
     }
 }

@@ -5,8 +5,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" type="text/css" href="/public/home/cqn.css"/>
+    <link rel="stylesheet" type="text/css" href="/public/home/home.css"/>
 </head>
+<?php $users_id = 1; ?>
 <div class="bg-flash-white">
     <body>
         <div id="menu">
@@ -114,7 +115,7 @@
                         </a>
                     </div>
                     <div class="col text-end mt-1">
-                        <a href="" class="none-underline color-white"><i class="fa-solid fa-cart-shopping"></i> </a> <span class="text-white">|</span>
+                        <a href="/don-hang-cua-toi-<?php echo $users_id;?>" class="none-underline color-white"><i class="fa-solid fa-cart-shopping"></i> </a> <span class="text-white">|</span>
                         <a href="#support" class="none-underline color-white"> <i class="fa-solid fa-question"></i> </a><span class="text-white"> |</span>
                         <a href="" class="none-underline color-white"> <i class="fa-solid fa-user"></i> </a>
                     </div>
