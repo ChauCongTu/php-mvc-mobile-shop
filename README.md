@@ -1,47 +1,47 @@
-# Trang web mua bán điện thoại MobileStore
+# MobileStore - Online phone selling website
 
-## Giới thiệu:
+## Introduction:
 
-Trang web mua bán điện thoại là một dự án sử dụng công nghệ PHP MVC, MySQL, HTML, CSS, JS và Bootstrap, được thiết kế để đáp ứng nhu cầu mua và bán điện thoại của người dùng.
+MobileStore is a project that uses PHP MVC, MySQL, HTML, CSS, JS and Bootstrap technologies, designed to meet the needs of buying and selling phones for users.
 
-## Công nghệ sử dụng:
+## Technologies used:
 
-- PHP: Sử dụng PHP để xử lý và lưu trữ dữ liệu, tạo các trang web động và cải thiện tính bảo mật của ứng dụng.
+- PHP: Used to process and store data, create dynamic web pages, and improve application security.
 
-- MVC: Sử dụng mô hình MVC (Model-View-Controller) để chia tách các phần khác nhau của ứng dụng và giúp dễ dàng quản lý ứng dụng.
+- MVC: Used the Model-View-Controller model to separate different parts of the application and make application management easy.
 
-- MySQL: Sử dụng MySQL để lưu trữ dữ liệu người dùng và sản phẩm.
+- MySQL: Used to store user and product data.
 
-- HTML, CSS, JS: Sử dụng HTML, CSS và JS để phát triển giao diện người dùng.
+- HTML, CSS, JS: Used to develop user interface.
 
-- Bootstrap: Sử dụng Bootstrap làm framework CSS để tăng tính tương thích và giảm thời gian phát triển UI.
+- Bootstrap: Used as a CSS framework to increase compatibility and reduce UI development time.
 
-- Ngoài ra còn có 1 vài công nghệ khác. 
+- Other technologies are also included.
 
-## Các chức năng chính:
+##Main features:
 
-- Trang web mua bán điện thoại cung cấp đầy đủ các chức năng cơ bản.
+- MobileStore provides all basic features of an online phone selling website.
 
-- Đăng ký và đăng nhập tài khoản để xem/mua điện thoại.
+- View, buy Mobile phone, tablet, ...
 
-- Xem danh sách các điện thoại, máy tính bảng, phụ kiện đang được bán.
+- View a list of phones, tablets, and accessories for sale.
 
-- Tìm kiếm một sản phẩm cụ thể dựa trên tên hoặc nhà sản xuất.
+- Search for specific products based on name or manufacturer.
 
-- Xem thông tin chi tiết của một sản phẩm bao gồm thông tin về sản phẩm, hình ảnh và mô tả của sản phẩm.
+- View detailed information of a product, including information, images, and descriptions of the product.
 
-- Đọc các tin tức mới nhất về công nghệ.
+- Read the latest news about technology.
 
-- Bảng điều khiển dành cho nhân viên cửa hàng (quản trị viên) có thể thống kê, đăng sản phẩm, đăng bài viết tin tức công nghệ,...
+- Back-end dashboard for store employees (administrators) to manage products, post technology news, statistical data, ...
 
-- Tương tác giữa người mua và nhân viên cửa hàng.
+- Interaction between buyers and store employees.
 
-## Cài đặt môi trường phát triển:
+## Development environment setup:
 
-- Sử dụng webserver của Xampp. [Xem hướng dẫn tại đây](https://phpandmysql.com/extras/installing-xampp/#how-to-install-xampp)
+- Use Xampp web server. (See instructions here)[https://www.freecodecamp.org/news/how-to-get-started-with-php/]
 
-- Code bằng trình biên dịch Visual Studio Code. [Xem hướng dẫn tại đây](https://www.geeksforgeeks.org/how-to-install-visual-studio-code-on-windows/)
+- Code using Visual Studio Code compiler. (See instructions here)[https://code.visualstudio.com/download]
 
+## Conclusion: 
 
-### Kết luận: 
-  Trang web mua bán điện thoại MobileStore là một project code bởi ChauQueNhon, sử dụng các công nghệ: PHP MVC, MySQL, HTML, CSS, JS và Bootstrap ... nhằm đáp ứng nhu cầu mua bán điện thoại của người dùng. Với các chức năng chính và các công nghệ sử dụng, trang web có thể đáp ứng tốt các nhu cầu của người dùng cũng như cung cấp trải nghiệm mua sắm trực tuyến dễ dàng, hiệu quả.
+With the main features and technologies used, the MobileStore website can meet the needs of users and provide an easy and efficient online shopping experience. This website was code by ChauQueNhon, using PHP MVC, MySQL, HTML, CSS, JS and Bootstrap technologies to meet the needs of buying and selling phones for users.
