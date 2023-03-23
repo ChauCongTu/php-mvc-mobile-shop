@@ -38,9 +38,9 @@ MobileStore is a project that uses PHP MVC, MySQL, HTML, CSS, JS and Bootstrap t
 
 ## Development environment setup:
 
-- Use Xampp web server. (See instructions here)[https://www.freecodecamp.org/news/how-to-get-started-with-php/]
+- Use Xampp web server. [See instructions here](https://www.freecodecamp.org/news/how-to-get-started-with-php)
 
-- Code using Visual Studio Code compiler. (See instructions here)[https://code.visualstudio.com/download]
+- Code using Visual Studio Code compiler. [See instructions here](https://code.visualstudio.com/download)
 
 ## Conclusion: 
 
