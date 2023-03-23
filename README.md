@@ -18,7 +18,7 @@ MobileStore is a project that uses PHP MVC, MySQL, HTML, CSS, JS and Bootstrap t
 
 - Other technologies are also included.
 
-##Main features:
+## Main features:
 
 - MobileStore provides all basic features of an online phone selling website.
 
