@@ -16,7 +16,6 @@
     <div class="pane">
         <div class="pane-header"><i class="fa-solid fa-file-contract"></i> Hóa đơn của bạn</div>
         <div class="pane-body">
-            <a href="/tao-don-hang/<?php echo $users_id; ?>"><i class="fa-solid fa-plus"></i> Tạo đơn hàng mới</a>
             <hr>
             <?php
                 $i = 1;
