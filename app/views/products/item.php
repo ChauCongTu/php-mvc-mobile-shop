@@ -21,7 +21,7 @@
                 </div>
                 <div class="sanpham-price">
                     <?php
-                    if (isset($product['discount_price'])) {
+                    if (isset($product['discount_price']) && $product['end_discount'] > getTimeNow()) {
                         echo '<div class="sanpham-price-cost">
                                 <div class="sanpham-sale-price">
                                     ' . currency_format($product['discount_price']) . '
@@ -49,9 +49,9 @@
                     </div>
                 </div>
                 <div class="btn-order">
-                    <?php echo '<a href="/gio-hang/them/' . $product['slug_product'] . '_' . $product['product_id'] . '" class="btn-order-btn">'; ?>
+                    <?php echo '<a href="/gio-hang/them/' . $product['product_id'] . '" class="btn-order-btn">'; ?>
                     <div class="btn-order-now">
-                        Đặt ngay
+                        <i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng
                     </div>
                     </a>
                     <div class="btn-order-pre">

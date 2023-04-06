@@ -7,9 +7,9 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: CerebriSans-Bold, -apple-system, system-ui, Roboto, sans-serif;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 400;
 }
 
 body.dark-theme {
@@ -162,6 +162,7 @@ ul {
     background-color: #fff;
     color: #000;
     border: 1px solid #000;
+    height: 55px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
@@ -186,12 +187,16 @@ ul {
 
 .form-search {
     position: relative;
+    width: 100%;
 }
 
 .btn-search {
     position: absolute;
-    right: 2%;
-    top: 15%;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #fff;
+    border: none;
+    right: 10px;
 }
 
 .bg-xam {
@@ -560,24 +565,34 @@ ul {
 }
 
 .nav-main-item a {
-    color: #000;
+    color: #333;
     text-decoration: none;
     padding: 10px;
 }
 
 .nav-main-item:hover .nav-link-item {
-    color: #fff;
+    color: #dc3545;
 }
 
 .nav-main-item-dropdown {
     position: absolute;
     display: none;
+    width: 300px;
     padding: 10px;
-    border-radius: 0 0 0.5rem 0.5rem;
     top: 100%;
+    transform: translateX(-10px);
     background-color: #fff;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     z-index: 100;
+}
+
+.nav-main-item-dropdown div {
+    padding: 10px;
+}
+
+.nav-main-item-dropdown div a {
+    color: #333;
+    font-size: 16px;
 }
 
 .nav-item-name {
@@ -585,13 +600,11 @@ ul {
     font-weight: bold;
 }
 
-.nav-main-item:hover {
-    background-color: #dc3545;
+.nav-main-item:hover .nav-main-item-dropdown {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.nav-main-item:hover .nav-main-item-dropdown {
-    display: block;
-}
 
 
 
@@ -1808,3 +1821,5 @@ ul {
         width: 95%;
     }
 }
+
+/* Cart style */

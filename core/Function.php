@@ -11,6 +11,13 @@ if (!function_exists('current_url')) {
         return "http".(!empty($_SERVER['HTTPS'])?"s":"")."://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
     }
 }
+
+if (!function_exists('getTimeNow')) {
+    function getTimeNow() {
+        return date('Y-m-d H:i:s');
+    }
+}
+
 if (!function_exists('displayTime')) {
     function displayTime($postTime = '2022-09-10 09:30:00') {
         // Chuyển đổi chuỗi thời gian thành timestamp

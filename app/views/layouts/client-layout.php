@@ -4,7 +4,6 @@
         <meta charset="utf-8"/>
         <link rel="stylesheet" href="/public/assets/client/css/style.css">
     </head>
-    <body>
         <?php
         $this->render('blocks/header');
         if(!empty($sub_content)){
@@ -15,6 +14,5 @@
         }
         $this->render('blocks/footer');
         ?>
-    </body>
     <script type="text/javascript" src="/public/assets/client/js/script.js"></script>
 </html>

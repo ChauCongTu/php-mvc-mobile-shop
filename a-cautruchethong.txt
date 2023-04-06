@@ -1,0 +1,8 @@
+productController:
+- thuong-hieu(brand): Display all product of this brand, and the nav show type to select
+- danh-muc(): Display all product with all brand, type
+- danh-muc(loai) (ex: danh-muc/phu-kien): Show all product of this type
+- danh-muc(loai, thuong-hieu) (ex: danh-muc/phu-kien/iphone) 
+
+-----------------------------------------------------
+Design system structure by Chau Que Nhon - JoshCQN

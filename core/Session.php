@@ -12,8 +12,15 @@ class Session{
             return true;
         }
         else{
-            if(isset($_SESSION[$sessionKey][$key])){
-                return $_SESSION[$sessionKey][$key];
+            if (empty($key)){
+                if (isset($_SESSION[$sessionKey])){
+                    return $_SESSION[$sessionKey];
+                }
+            }
+            else {
+                if(isset($_SESSION[$sessionKey][$key])){
+                    return $_SESSION[$sessionKey][$key];
+                }
             }
         }
     }
@@ -59,4 +66,3 @@ class Session{
         }
     }
 }
-?>
