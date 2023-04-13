@@ -46,8 +46,9 @@ class Product extends Controller{
         $this->data['sub_content']['current_page'] = $current_page;
         $this->data["content"] = "products/category";
         $this->render("layouts/client-layout", $this->data);
-
     }
+
+    
     public function logout(){
         var_dump(Session::delete('user'));
     }

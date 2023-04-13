@@ -15,34 +15,6 @@
                     </small>
                 </a>
             </div>
-            <div class="hot-content">
-                <a href="" class="none-underline color-black"><b>#2 Galaxy S23 series</b>
-                    <small>
-                        <pre>Đặt hàng ngay</pre>
-                    </small>
-                </a>
-            </div>
-            <div class="hot-content">
-                <a href="" class="none-underline color-black"><b>#3 Iphone 13</b>
-                    <small>
-                        <pre>Đặt hàng ngay</pre>
-                    </small>
-                </a>
-            </div>
-            <div class="hot-content">
-                <a href="" class="none-underline color-black"><b>#4 Galaxy S23 Plus 5G</b>
-                    <small>
-                        <pre>Đặt hàng ngay</pre>
-                    </small>
-                </a>
-            </div>
-            <div class="hot-content">
-                <a href="" class="none-underline color-black"><b>#5 Oppo Reno 8T 5G</b>
-                    <small>
-                        <pre>Đặt hàng ngay</pre>
-                    </small>
-                </a>
-            </div>
         </div>
 
         <div class="col-md-7 mt-2">
@@ -124,7 +96,9 @@
 <!-- Các sản phẩm giảm giá nhiều nhất -->
 <?php
 if (count($flashSaleProduct) == 0) {
-} else {
+
+} 
+else {
 ?>
     <div class="container">
         <div class="list-product">
