@@ -10,7 +10,6 @@ class Home extends Controller{
         $this->data['page_title'] = "MobileStore.Com - Điện thoại di động, máy tính bảng, phụ kiện giá tốt";
         $banner = $this->model('BannerModel');
         $product = $this->model('ProductModel');
-        $product->updateDiscount();
         $news = $this->model('NewsModel');
         $this->data['sub_content']['centerBanner'] = $banner->getCenterBanner();
         $this->data['sub_content']['headerBanner'] = $banner->getHeaderLongBanner();

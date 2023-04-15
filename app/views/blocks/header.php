@@ -9,8 +9,8 @@
     <link rel="stylesheet" type="text/css" href="/public/home/cart.css" />
 </head>
 <div class="bg-flash-white">
-
     <body>
+        <!-- Mobil Menu -->
         <div id="menu">
             <div class="pb-3 pt-3 border-bottom border-dark text-end" style="font-size:20px">
                 <span class="border border-dark p-2 rounded-3 to-pointer me-3" onclick="hideMenu()">
@@ -107,6 +107,7 @@
                 <p><a href="#support" class="color-black"><small>&#9679;</small> Liên hệ hỗ trợ</a></p>
             </div>
         </div>
+        <!-- Header Section -->
         <div class="bg-home pt-4 pb-2">
             <div class="container">
                 <div class="row">
@@ -123,6 +124,7 @@
                 </div>
             </div>
         </div>
+        <!-- Toogle Button on Mobiel -->
         <div class="bg-home none-on-desktop">
             <div class="container">
                 <div class="show-menu" onclick="showMenu()">
@@ -132,6 +134,7 @@
                 </div>
             </div>
         </div>
+        <!-- Destop Navigation -->
         <div class="bg-menu none-on-mobile">
             <div class="container">
                 <div class="row">
@@ -285,11 +288,11 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="contact-mess">
+        <div class="contact-mess">
             <div class="contact-mess-icon">
                 <a href="https://m.me/xoxvp" target="_blank"><i class="fa-brands fa-facebook-messenger"></i></a>
             </div>
-        </div> -->
+        </div>
         <div class="quangcaodacbiet">
             <div id="nen-mo" onclick="closeads()"></div>
             <div id="quangcao" onclick="closeads()">

@@ -21,6 +21,34 @@ class Product extends Controller{
             App::$app->loadError('404');
         }
     }
+
+    public function ProductCategory($type = 1, $idBrand = ''){
+        $limit = 20;
+        $product = $this->_product->getProductByType($type);
+        $total_product = count($product);
+        $total_page = ceil($total_product/$limit);
+        $current_page = (isset($_GET['page']))?$_GET['page']:1;
+
+        if($current_page > $total_page || $current_page <= 0){
+            App::$app->loadError("404");
+            die();
+        }
+        $product = $this->_product->splitProduct($product, $current_page, $total_page, $limit);
+        // Set Page Title
+        if ($type == 1)
+            $this->data["page_title"] = "Điện thoại " .$idBrand." - Smartphone chính hãng thế hệ mới, ưu đãi, trả góp 0 lãi suất | MobileStore";
+        else if ($type == 2)
+            $this->data["page_title"] = "Máy tính bảng " .$idBrand." - Tablet chính hãng thế hệ mới, ưu đãi, trả góp 0 lãi suất | MobileStore";
+        else if ($type == 3)
+            $this->data["page_title"] = "Phụ kiện " .$idBrand." - Phụ kiện chính hãng thế hệ mới, ưu đãi, trả góp 0 lãi suất | MobileStore";
+        // Send data to View
+        $this->data["sub_content"]["product"] = $product;
+        $this->data['sub_content']['total_page'] = $total_page;
+        $this->data['sub_content']['current_page'] = $current_page;
+        $this->data["content"] = "products/ProductCategory";
+        $this->render("layouts/client-layout", $this->data);
+    }
+
     public function category($name, $idBrand, $type = 1){
         $limit = 10;
         $total_product = count($this->_product->getProductByBrand($idBrand, $type));
@@ -53,4 +81,3 @@ class Product extends Controller{
         var_dump(Session::delete('user'));
     }
 }
-?>

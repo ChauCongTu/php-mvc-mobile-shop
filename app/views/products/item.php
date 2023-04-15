@@ -21,7 +21,7 @@
                 </div>
                 <div class="sanpham-price">
                     <?php
-                    if (isset($product['discount_price']) && $product['end_discount'] > getTimeNow()) {
+                    if ($product['discount_price'] != 0) {
                         echo '<div class="sanpham-price-cost">
                                 <div class="sanpham-sale-price">
                                     ' . currency_format($product['discount_price']) . '
@@ -31,7 +31,7 @@
                                 </div>
                             </div>
                             <div class="sanpham-info-decrease">
-                                <span>-  ' . currency_format(round((($product['origin_price'] - $product['discount_price']) / $product['origin_price']) * 100)) . ' %</span>
+                                <span>-  ' . round((($product['origin_price'] - $product['discount_price']) / $product['origin_price']) * 100). ' %</span>
                             </div>';
                     } else {
                         echo '<div class="sanpham-price-cost">

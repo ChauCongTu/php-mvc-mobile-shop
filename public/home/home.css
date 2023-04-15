@@ -577,7 +577,7 @@ ul {
 .nav-main-item-dropdown {
     position: absolute;
     display: none;
-    width: 300px;
+    width: 380px;
     padding: 10px;
     top: 100%;
     transform: translateX(-10px);
@@ -588,6 +588,7 @@ ul {
 
 .nav-main-item-dropdown div {
     padding: 10px;
+    width: 50%;
 }
 
 .nav-main-item-dropdown div a {
@@ -605,13 +606,64 @@ ul {
     flex-wrap: wrap;
 }
 
+/* Product Css */
 
+/* Product Category Css */
+.box-group-filter-brand {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
 
+.box-group-filter-brand-item {
+    padding: 10px;
+}
 
+.box-group-filter-brand-item:hover {
+    border: 1px solid #dc3545;
+    padding: 9px;
+}
 
+.box-group-filter-brand-item img {
+    max-width: 125px;
+    filter: grayscale(100%);
+    transition: 0.3s all;
+    -webkit-transition: 0.3s all;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
 
+.box-group-filter-brand a:hover .box-group-filter-brand-item img {
+    filter: grayscale(0%);
+}
 
+.danhmuc-nav-price {
 
+}
+.price-input {
+    width: 100px;
+    height: 30px;
+    font-size: 14px;
+    padding-left: 10px;
+    border: 1px solid #ccc;
+    border-radius: .3rem;
+}
+
+.btn-price {
+    height: 30px;
+    font-size: 14px;
+    padding: 0 10px;
+    border: none;
+    border-radius: .3rem;
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.btn-price:hover {
+    background-color: #999;
+}
 
 
 /* Index */
@@ -1373,7 +1425,7 @@ ul {
     font-size: 13px;
     border: 1px solid #6c757d;
     padding: 5px 10px;
-    border-radius: 1.5rem;
+    border-radius: .3rem;
 }
 
 .danhmuc-nav-tieuchi a:hover {
