@@ -144,6 +144,32 @@ $('.sanpham-slick-img').slick({
 
 });
 
+$('.product-detail-img').slick({
+    asNavFor: "#thumbs",
+    infinite: true,
+    speed: 300,
+    arrows: true,
+    slidesToShow: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    prevArrow: "<button type='button' class='slick-prev slick-product'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
+    nextArrow: "<button type='button' class='slick-next slick-product'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
+});
+
+$('.product-detail-thumb').slick({
+    asNavFor: "#img",
+    infinite: true,
+    arrows: true,
+    slidesToShow: 3,
+    prevArrow: "<button type='button' class='slick-prev slick-product'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
+    nextArrow: "<button type='button' class='slick-next slick-product'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
+});
+
+$("#thumbs .slick-slide").on("click",function(){
+    let index=$(this).attr("data-slick-index")
+    $("#img").slick("slickGoTo",index)
+})
+
 function seeDetail() {
     document.getElementById('sanpham-nenmo').style.display = 'block',
         document.getElementById('sanpham-detail-detail').style.left = '50%'

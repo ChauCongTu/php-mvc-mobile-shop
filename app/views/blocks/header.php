@@ -141,59 +141,59 @@
                     <div class="col-md-7">
                         <div class="nav-main">
                             <div class="nav-main-item">
-                                <a href="/danh-muc/dien-thoai" class="nav-link-item"><img src="/images/img/mobile.png"> Điện thoại</a>
+                                <a href="/dien-thoai.html" class="nav-link-item"><img src="/images/img/mobile.png"> Điện thoại</a>
                                 <div class="nav-main-item-dropdown">
                                     <div>
-                                        <a href="/samsung-1-category" class="color-black">Samsung</a>
+                                        <a href="/samsung.html" class="color-black">Samsung</a>
                                     </div>
                                     <div>
-                                        <a href="/iphone-2-category" class="color-black">Iphone</a>
+                                        <a href="/iphone.html" class="color-black">Iphone</a>
                                     </div>
                                     <div>
-                                        <a href="/xiaomi-3-category" class="color-black">Xiaomi</a>
+                                        <a href="/xiaomi.html" class="color-black">Xiaomi</a>
                                     </div>
                                     <div>
-                                        <a href="/realme-8-category" class="color-black">Realme</a>
+                                        <a href="/realme.html" class="color-black">Realme</a>
                                     </div>
                                     <div>
-                                        <a href="/huawei-6-category" class="color-black">Huawei</a>
+                                        <a href="/huawei.html" class="color-black">Huawei</a>
                                     </div>
                                     <div>
-                                        <a href="/lg-7-category" class="color-black">LG</a>
+                                        <a href="/lg.html" class="color-black">LG</a>
                                     </div>
                                     <div>
-                                        <a href="/vivo-4-category" class="color-black">Vivo</a>
+                                        <a href="/vivo.html" class="color-black">Vivo</a>
                                     </div>
                                     <div>
-                                        <a href="/oppo-5-category" class="color-black">Oppo</a>
+                                        <a href="/oppo.html" class="color-black">Oppo</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="nav-main-item">
-                                <a href="/danh-muc/apple" class="nav-link-item"><img src="/images/img/iphone.png"> Apple</a>
+                                <a href="/iphone.html" class="nav-link-item"><img src="/images/img/iphone.png"> Apple</a>
                                 <div class="nav-main-item-dropdown">
                                     <div>
-                                        <a href="/vivo-4-category" class="color-black">Iphone</a>
+                                        <a href="/iphone.html" class="color-black">Iphone</a>
                                     </div>
                                     <div>
-                                        <a href="/oppo-5-category" class="color-black">Ipad</a>
+                                        <a href="/ipad.html" class="color-black">Ipad</a>
                                     </div>
                                     <div>
-                                        <a href="/vivo-4-category" class="color-black">iMac</a>
+                                        <a href="/imac.html" class="color-black">iMac</a>
                                     </div>
                                     <div>
-                                        <a href="/oppo-5-category" class="color-black">Macbook</a>
+                                        <a href="/macbook.html" class="color-black">Macbook</a>
                                     </div>
                                     <div>
-                                        <a href="/vivo-4-category" class="color-black">AirPods</a>
+                                        <a href="/airpods.html" class="color-black">AirPods</a>
                                     </div>
                                     <div>
-                                        <a href="/oppo-5-category" class="color-black">Phụ kiện Apple</a>
+                                        <a href="/phu-kien/iphone-2" class="color-black">Phụ kiện Apple</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="nav-main-item">
-                                <a href="/danh-muc/table" class="nav-link-item"><img src="/images/img/mac.png"> Tablet</a>
+                                <a href="/may-tinh-bang.html" class="nav-link-item"><img src="/images/img/mac.png"> Tablet</a>
                                 <div class="nav-main-item-dropdown">
                                     <div>
                                         <a href="/tim-kiem?_k=imac" class="color-black">IMac</a>
@@ -216,42 +216,42 @@
                                 </div>
                             </div>
                             <div class="nav-main-item">
-                                <a href="/danh-muc/am-thanh" class="nav-link-item"><img src="/images/img/icon-am-thanha.png"> Âm thanh</a>
+                                <a href="/am-thanh.html" class="nav-link-item"><img src="/images/img/icon-am-thanha.png"> Âm thanh</a>
                             </div>
                             <div class="nav-main-item">
-                                <a href="/danh-muc/phu-kien" class="nav-link-item"><img src="/images/img/accessories.png"> Phụ kiện</a>
+                                <a href="/phu-kien.html" class="nav-link-item"><img src="/images/img/accessories.png"> Phụ kiện</a>
                                 <div class="nav-main-item-dropdown">
                                     <div>
-                                        <a href="/danh-muc/phu-kien/apple" class="color-black">Phụ kiện Apple</a>
+                                        <a href="/phu-kien/iphone-2" class="color-black">Phụ kiện Apple</a>
                                     </div>
                                     <div>
-                                        <a href="/danh-muc/phu-kien/iphone" class="color-black">Phụ kiện Samsung</a>
+                                        <a href="/phu-kien/samsung-1" class="color-black">Phụ kiện Samsung</a>
                                     </div>
                                     <div>
-                                        <a href="/danh-muc/phu-kien/iphone" class="color-black">Phụ kiện Anker</a>
+                                        <a href="/phu-kien/anker-16" class="color-black">Phụ kiện Anker</a>
                                     </div>
                                     <div>
-                                        <a href="/danh-muc/phu-kien/iphone" class="color-black">Phụ kiện Energizer</a>
+                                        <a href="/phu-kien/energizer-17" class="color-black">Phụ kiện Energizer</a>
                                     </div>
                                     <div>
-                                        <a href="/danh-muc/phu-kien/iphone" class="color-black">Ốp lưng, bao da</a>
+                                        <a href="/tim-kiem?_k=op+lung" class="color-black">Ốp lưng, bao da</a>
                                     </div>
                                     <div>
-                                        <a href="/danh-muc/phu-kien/iphone" class="color-black">Dán màn hình</a>
+                                        <a href="/tim-kiem?_k=dan+man+hinh" class="color-black">Dán màn hình</a>
                                     </div>
                                     <div>
-                                        <a href="/danh-muc/phu-kien/iphone" class="color-black">Cáp sạc</a>
+                                        <a href="/tim-kiem?_k=cap+sac" class="color-black">Cáp sạc</a>
                                     </div>
                                     <div>
-                                        <a href="/danh-muc/phu-kien/iphone" class="color-black">Adapter, củ sạc</a>
+                                        <a href="/tim-kiem?_k=cu+sac" class="color-black">Adapter, củ sạc</a>
                                     </div>
                                     <div>
-                                        <a href="/danh-muc/phu-kien/iphone" class="color-black">Pin sạc dự phòng</a>
+                                        <a href="/tim-kiem?_k=sac+du+phong" class="color-black">Pin sạc dự phòng</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="nav-main-item">
-                                <a href="/may-cu" class="nav-link-item"><img src="/images/img/icon-may-cu.png"> Máy cũ giá rẻ</a>
+                                <a href="/may-cu.html" class="nav-link-item"><img src="/images/img/icon-may-cu.png"> Máy cũ giá rẻ</a>
                                 <div class="nav-main-item-dropdown">
                                     <div>
                                         <a href="/may-cu/iphone" class="color-black">IPhone cũ</a>

@@ -131,7 +131,6 @@ class ProductModel extends Model{
     }
     public function filterProduct($data, $startPrice, $endPrice){
         $n = count($data);
-        echo $endPrice;
         for($i = 0; $i < $n; $i++){
             $price = $data[$i]['origin_price'] - $data[$i]['discount_price'];
             if ($price > $endPrice || $price < $startPrice){
