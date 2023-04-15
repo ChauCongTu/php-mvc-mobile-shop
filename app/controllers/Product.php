@@ -22,9 +22,16 @@ class Product extends Controller{
         }
     }
 
-    public function ProductCategory($type = 1, $idBrand = ''){
+    public function ProductCategory($type = 1, $name = '',$idBrand = ''){
+        $type = addslashes($type);
+        $idBrand = addslashes($idBrand);
         $limit = 20;
-        $product = $this->_product->getProductByType($type);
+        if($idBrand == null){
+            $product = $this->_product->getProductByType($type);
+        }
+        else {
+            $product = $this->_product->getProductByBrand($idBrand, $type);
+        }
         $total_product = count($product);
         $total_page = ceil($total_product/$limit);
         $current_page = (isset($_GET['page']))?$_GET['page']:1;
@@ -33,6 +40,14 @@ class Product extends Controller{
             App::$app->loadError("404");
             die();
         }
+        // Filter Product
+        $startPrice = (isset($_GET['startPrice']))?filter_var($_GET['startPrice'], FILTER_SANITIZE_NUMBER_FLOAT):"";
+        $endPrice = (isset($_GET['endPrice']))?filter_var($_GET['endPrice'], FILTER_SANITIZE_NUMBER_FLOAT):"";
+        if ($startPrice != "" && $endPrice != ""){
+            $product = $this->_product->filterProduct($product, $startPrice, $endPrice);
+        }
+        // Split Page
+        $total_product = count($product);
         $product = $this->_product->splitProduct($product, $current_page, $total_page, $limit);
         // Set Page Title
         if ($type == 1)

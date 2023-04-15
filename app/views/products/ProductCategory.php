@@ -54,8 +54,8 @@
                     ?>
                     <form action="" method="GET">
                         <div class="danhmuc-nav-price">
-                            <input type="text" name="startPrice" class="price-input" placeholder="Giá bắt đầu"> -
-                            <input type="text" name="endPrice" class="price-input" placeholder="Giá kết thúc">
+                            <input type="number" name="startPrice" class="price-input" placeholder="Giá bắt đầu"> -
+                            <input type="number" name="endPrice" class="price-input" placeholder="Giá kết thúc">
                             <button class="btn-price">Lọc</button>
                         </div>
                     </form>

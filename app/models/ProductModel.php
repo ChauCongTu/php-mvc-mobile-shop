@@ -52,6 +52,7 @@ class ProductModel extends Model{
         return $data;
     }
     public function searchProductByName($keyword, $orderby = 'newfirst'){
+        $keyword = filter_var($keyword, FILTER_SANITIZE_SPECIAL_CHARS);
         if($orderby == 'newfirst'){
             $data = $this->db->table($this->_tableMain)->select('*')->whereLike('name', $keyword)->orderBy('product_id', 'DESC')->get();
             for($i = 0; $i < count($data); $i++){
@@ -128,43 +129,16 @@ class ProductModel extends Model{
         extract($name);
         return $name;
     }
-    public function filterProduct($data, $condition){
-        if($condition == 1){
-            for($i = 0; $i < count($data); $i++){
-                $price = $data[$i]['origin_price'] - $data[$i]['discount_price'];
-                if ($price > 2000000){
-                    unset($data[$i]);
-                }
+    public function filterProduct($data, $startPrice, $endPrice){
+        $n = count($data);
+        echo $endPrice;
+        for($i = 0; $i < $n; $i++){
+            $price = $data[$i]['origin_price'] - $data[$i]['discount_price'];
+            if ($price > $endPrice || $price < $startPrice){
+                unset($data[$i]);
             }
-            return array_values($data);
         }
-        else if($condition == 2){
-            for($i = 0; $i < count($data); $i++){
-                $price = $data[$i]['origin_price'] - $data[$i]['discount_price'];
-                if ($price <= 2000000 || $price > 6000000){
-                    unset($data[$i]);
-                }
-            }
-            return array_values($data);
-        }
-        else if($condition == 3){
-            for($i = 0; $i < count($data); $i++){
-                $price = $data[$i]['origin_price'] - $data[$i]['discount_price'];
-                if ($price <= 6000000 || $price > 10000000){
-                    unset($data[$i]);
-                }
-            }
-            return array_values($data);
-        }
-        else if($condition == 4){
-            for($i = 0; $i < count($data); $i++){
-                $price = $data[$i]['origin_price'] - $data[$i]['discount_price'];
-                if ($price < 10000000){
-                    unset($data[$i]);
-                }
-            }
-            return array_values($data);
-        }
+        return array_values($data);
     }
     public function sortProduct($data, $condition){
         if($condition == 1){
@@ -174,7 +148,7 @@ class ProductModel extends Model{
 
             return $data;
         }
-        else if($condition == 2){
+        else if($condition == 4){
             usort($data, function($a, $b) {
                 return $b['product_id'] - $a['product_id'];
             });
@@ -190,7 +164,7 @@ class ProductModel extends Model{
 
             return $data;
         }
-        else if($condition == 4){
+        else if($condition == 2){
             usort($data, function($a, $b) {
                 return $b['tmp_price'] - $a['tmp_price'];
             });
