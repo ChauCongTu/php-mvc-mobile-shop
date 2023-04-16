@@ -10,56 +10,59 @@
         <div class="product-detail-main">
             <div class="product-img">
                 <div class="product-detail-img" id="img">
-                    <div class="product-detail-img-item">
-                        <img src="/images/product/iphone-14-promax-1tb-chinh-hang_1.jpg">
-                    </div>
-                    <div class="product-detail-img-item">
-                        <img src="/images/product/iphone-14-promax-1tb-chinh-hang_1.jpg">
-                    </div>
-                    <div class="product-detail-img-item">
-                        <img src="/images/product/iphone-14-promax-1tb-chinh-hang_1.jpg">
-                    </div>
-                    <div class="product-detail-img-item">
-                        <img src="/images/product/iphone-14-promax-1tb-chinh-hang_1.jpg">
-                    </div>
+                    <?php
+                    foreach ($img as $value) {
+                        echo '<div class="product-detail-img-item">
+                                    <img src="' . $value['img'] . '"/>
+                                </div>';
+                    }
+                    ?>
                 </div>
                 <div class="product-detail-thumb" id="thumbs">
-                    <div>
-                        <img src="/images/product/iphone-14-promax-1tb-chinh-hang_1.jpg">
-                    </div>
-                    <div>
-                        <img src="/images/product/iphone-14-promax-1tb-chinh-hang_1.jpg">
-                    </div>
-                    <div>
-                        <img src="/images/product/iphone-14-promax-1tb-chinh-hang_1.jpg">
-                    </div>
-                    <div>
-                        <img src="/images/product/iphone-14-promax-1tb-chinh-hang_1.jpg">
-                    </div>
+                    <?php
+                    foreach ($img as $value) {
+                        echo '<div>
+                                    <img src="' . $value['img'] . '"/>
+                                </div>';
+                    }
+                    ?>
                 </div>
             </div>
             <div class="product-detail-info">
-                <span class="product-detail-info-name">Xiaomi Redmi Note 12 128GB Chính Hãng</span>
-                <p class="product-detail-info-id">No: 3000005</p>
-                <div class="product-detail-info-state"><span class="text-success">Hàng có sẵn</span></div>
+                <span class="product-detail-info-name"><?php echo $product['name']; ?></span>
+                <p class="product-detail-info-id">No: <?php echo $product['product_id']; ?></p>
+                <div class="product-detail-info-state">
+                    <?php
+                    if ($product['state'] == 0)
+                        echo '<span class="text-success">Hàng có sẵn</span>';
+                    else
+                        echo '<span class="text-danger">Ngừng kinh doanh</span>';
+                    ?>
+
+                </div>
                 <div class="product-detail-info-price">
-                    <span class="sale-price">4.600.000đ</span><br>
-                    <span class="origin-price">4.990.000đ</span> <span class="percent-descrease">6%</span>
+                    <?php
+                    if ($product['discount_price'] > 0) {
+                        echo '<span class="sale-price">' . currency_format($product['discount_price']) . '</span><br>
+                                <span class="origin-price">' . currency_format($product['origin_price']) . '</span> <span class="percent-descrease">' . $product['tmp_price'] . '%</span>';
+                    } else {
+                        echo '<span class="sale-price">' . currency_format($product['origin_price']) . '</span><br>';
+                    }
+                    ?>
                 </div>
                 <div class="product-detail-info-promotion">
                     <span class="pro-title text-danger"><i class="fa-solid fa-gift"></i> Khuyến mãi</span>
                     <div class="pro-content">
-                        1. Duy nhất 16.04: Kỷ niệm 30 năm SIS Mobilefone <br>
-                        - Từ 8H - 21H: giảm 150.000đ <br>
-                        2. Mở bán 08 - 30.04: Giá cuối từ 3.890.000đ sau khi trừ các ưu đãi sau: <br>
-                        - Tặng PMH trị giá 300.000đ Hoặc Tặng BHMR 1 đổi 1 trong 12 tháng <br>
-                        - Tặng thêm 500.000đ khi thu cũ đổi mới (Xem chi tiết) <br>
-                        - Trả góp 0% qua công ty tài chính
+                        <?php echo $product['gift']; ?>
                     </div>
                 </div>
                 <div class="product-detail-info-button">
-                    <a href="/gio-hang/them/1" class="btn-addToCart"><div>ĐẶT NGAY</div></a>
-                    <a href="" class="btn-action"><div>TRẢ GÓP 0%</div></a>
+                    <a href="/gio-hang/them/<?php echo $product['product_id']; ?>" class="btn-addToCart">
+                        <div>ĐẶT NGAY</div>
+                    </a>
+                    <a href="" class="btn-action">
+                        <div>TRẢ GÓP 0%</div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -75,3 +78,101 @@
             </div>
         </div>
     </div>
+    <div class="product-info">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="product-info-main">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#info">Thông Tin</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#detail">Chi Tiết</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#rating">Đánh Giá</a>
+                        </li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div id="info" class="container tab-pane active"><br>
+                            <?php echo $product['info']; ?>
+                        </div>
+                        <div id="detail" class="container tab-pane fade"><br>
+                            <?php echo $product['detail']; ?>
+                        </div>
+                        <div id="rating" class="container tab-pane fade"><br>
+                            <h3 class="text-center">Tính năng đang được cập nhật, hãy quay lại sau!</h3>
+                            <img src="/images/banner/26691.jpg" alt="back again" width="100%">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="product-info-aside">
+                    <div class="product-info-aside-title">
+                        <span><i class="fa-solid fa-gear"></i> Thông số | Cấu hình</span>
+                    </div>
+                    <div class="product-info-aside-body">
+                        <?php
+                        foreach ($config as $value) {
+                            echo '<div class="product-info-aside-body-item">
+                                        <div class="config-key">' . $value['conf_key'] . '</div>
+                                        <div class="config-value">' . $value['conf_value'] . '</div>
+                                    </div>';
+                        }
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Sản phẩm cùng thương hiệu -->
+    <div class="product-same panel">
+        <div class="slick">
+            <div class="slick-header">
+                <div class="slick-header-title">Sản phẩm cùng thương hiệu</div>
+                <div class="slick-arrow"></div>
+            </div>
+            <div class="slick-body">
+                <?php
+                foreach ($productSameBrand as $value) {
+                    if ($value['discount_price'] > 0) {
+                        echo '<div class="slick-item">
+                                    <div class="slick-product-slider">
+                                        <div class="slick-sale-info"><span> Giảm ' . $discount . '%</span></div>
+                                        <div class="slick-img-product-sale">
+                                            <img src="' . $value['img'] . '">
+                                        </div>
+                                        <div class="slick-name-product">' . $value['name'] . '</div>
+                                        <div class="slick-price">
+                                            <div class="slick-sale-price">' . currency_format($value['discount_price']) . '</div>
+                                            <div class="slick-origin-price"> <del>' . currency_format($value['origin_price']) . '</del></div>
+                                        </div>
+                                        <a href="/' . $value['slug_product'] . '_' . $value['product_id'] . '" class="none-underline">
+                                            <div class="slick-order-button"> Xem chi tiết</div>
+                                        </a>
+                                    </div>
+                                </div>';
+                    } else {
+                        echo '<div class="slick-item">
+                                    <div class="slick-product-slider">
+                                        <div class="slick-img-product-sale">
+                                            <img src="' . $value['img'] . '">
+                                        </div>
+                                        <div class="slick-name-product">' . $value['name'] . '</div>
+                                        <div class="slick-price">
+                                            <div class="slick-sale-price">' . currency_format($value['origin_price']) . '</div>
+                                        </div>
+                                        <a href="/' . $value['slug_product'] . '_' . $value['product_id'] . '" class="none-underline">
+                                            <div class="slick-order-button"> Xem chi tiết</div>
+                                        </a>
+                                    </div>
+                                </div>';
+                    }
+                }
+                ?>
+            </div>
+        </div>
+    </div>
+</div>
