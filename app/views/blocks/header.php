@@ -117,7 +117,10 @@
                         </a>
                     </div>
                     <div class="col text-end mt-1">
-                        <a href="/gio-hang" class="none-underline color-white"><i class="fa-solid fa-cart-shopping"></i> </a> <span class="text-white">|</span>
+                        <a href="/gio-hang" class="none-underline color-white">
+                            <?php echo (Session::data('cart') != null)?"<i class='fa-solid fa-cart-shopping'></i>(".count(Session::data('cart')).")":"<i class='fa-solid fa-cart-shopping'></i>"; ?>
+                            
+                        </a> <span class="text-white">|</span>
                         <a href="#support" class="none-underline color-white"> <i class="fa-solid fa-question"></i> </a><span class="text-white"> |</span>
                         <a href="" class="none-underline color-white"> <i class="fa-solid fa-user"></i> </a>
                     </div>

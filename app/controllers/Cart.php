@@ -4,7 +4,9 @@ class Cart extends Controller{
     public $model;
 
     /*
-    Cart: List<cartItem>
+    Cart: 
+        - List<cartItem>
+        - Total
     cartItem: 
         - Product_id
         - Product_name
@@ -18,10 +20,14 @@ class Cart extends Controller{
     {
         $this->model= $this->model('CartModel');
     }
+    // Index Action
     public function index(){
         $cart = Session::data('cart');
         $this->data["page_title"] = "Giỏ hàng của tôi";
         $this->data["sub_content"]["cart"] = $cart;
+        // echo'<pre>';
+        // print_r($cart);
+        // echo'</pre>';
         $this->data["content"] = "cart/index";
         $this->render("layouts/client-layout", $this->data);
     }
@@ -40,7 +46,7 @@ class Cart extends Controller{
             $name = $product['name'];
             $amount = 1;
             $photo = $product['img'];
-            if(isset($product['discount_price']) && $product['end_discount'] > $now){
+            if($product['discount_price'] > 0){
                 $price = $product['discount_price'];
             }
             else {
@@ -67,14 +73,43 @@ class Cart extends Controller{
     public function RemoveItem($idProduct){
         $cartItemList = Session::data('cart');
         if (array_key_exists($idProduct, $cartItemList)){
-            unset($cartItemList[$idProduct]);
+            if (count($cartItemList) == 1) {
+                Session::delete('cart');
+                header('Location: /gio-hang');
+                exit();
+            }
+            else{
+                unset($cartItemList[$idProduct]);
+            }
         }
         else{
             echo 'Sản phẩm không tồn tại!';
         }
         Session::data('cart', $cartItemList);
         header('Location: /gio-hang');
-        exit(); 
+        exit();
     }
+    public function IncreaseAmount($idProduct){
+        $cartItemList = Session::data('cart');
+        $cartItemList[$idProduct]['amount']++;
+        $cartItemList[$idProduct]['total'] = $cartItemList[$idProduct]['amount'] * $cartItemList[$idProduct]['price'];
+        Session::data('cart', $cartItemList);
+        header('Location: /gio-hang');
+        exit();
+    }
+    public function DecreaseAmount($idProduct){
+        $cartItemList = Session::data('cart');
+        if ($cartItemList[$idProduct]['amount'] <= 1) {
+            // It will not Decrease Amount
+        }
+        else {
+            $cartItemList[$idProduct]['amount']--;
+            $cartItemList[$idProduct]['total'] = $cartItemList[$idProduct]['amount'] * $cartItemList[$idProduct]['price'];
+        }
+        Session::data('cart', $cartItemList);
+        header('Location: /gio-hang');
+        exit();
+    }
+
 }
 ?>
