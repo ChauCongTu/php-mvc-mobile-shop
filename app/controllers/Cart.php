@@ -110,6 +110,9 @@ class Cart extends Controller{
         header('Location: /gio-hang');
         exit();
     }
+    public function CheckoutConfirm($cart, $user){
+        
+    }
 
 }
 ?>
